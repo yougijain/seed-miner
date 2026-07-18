@@ -1,0 +1,46 @@
+name: generate-seed
+
+on:
+  schedule:
+    - cron: '0 15 * * 1-5'   # ~weekday mornings (15:00 UTC, Mon–Fri); weekends skipped = less robotic
+  workflow_dispatch: {}       # manual trigger for testing
+
+# Don't let a manual run and a scheduled run race each other onto the same branch.
+concurrency:
+  group: generate-seed
+  cancel-in-progress: false
+
+jobs:
+  seed:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: write         # built-in GITHUB_TOKEN pushes to THIS repo; no PAT needed
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      # The generator only needs the Anthropic SDK — it writes seed files, it
+      # doesn't run them, so the data-science libraries a seed might import are
+      # not installed here.
+      - run: pip install -r requirements.txt
+
+      - name: Generate a seed
+        run: python runner/generate.py
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+
+      - name: Commit and push
+        run: |
+          git config user.name  "seed-miner-bot"
+          git config user.email "seed-miner-bot@users.noreply.github.com"
+          git add -A
+          if git diff --cached --quiet; then
+            echo "No changes to commit."
+          else
+            git commit -m "$(cat state/last_commit_msg.txt)"
+            git push
+          fi
