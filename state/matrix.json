@@ -1,0 +1,53 @@
+{
+  "domains": [
+    "competitive_birdwatching",
+    "community_theater_box_office",
+    "beekeeping_colony_health",
+    "disc_golf",
+    "thrift_store_pricing",
+    "amateur_radio_contest_logs",
+    "little_league_scheduling",
+    "community_garden_plots",
+    "local_trail_conditions",
+    "board_game_cafe_inventory",
+    "farmers_market_vendor_sales",
+    "youth_chess_tournament_pairings"
+  ],
+  "techniques": [
+    "anomaly_detection",
+    "forecasting",
+    "matching_recommendation",
+    "clustering_segmentation",
+    "graph_network_analysis",
+    "optimization_scheduling",
+    "nlp_on_logs",
+    "causal_inference_observational"
+  ],
+  "obvious_pairings": {
+    "competitive_birdwatching": "forecasting",
+    "community_theater_box_office": "forecasting",
+    "beekeeping_colony_health": "anomaly_detection",
+    "disc_golf": "forecasting",
+    "thrift_store_pricing": "anomaly_detection",
+    "amateur_radio_contest_logs": "anomaly_detection",
+    "little_league_scheduling": "optimization_scheduling",
+    "community_garden_plots": "matching_recommendation",
+    "local_trail_conditions": "forecasting",
+    "board_game_cafe_inventory": "forecasting",
+    "farmers_market_vendor_sales": "forecasting",
+    "youth_chess_tournament_pairings": "matching_recommendation"
+  },
+  "skip": [
+    ["community_theater_box_office", "nlp_on_logs"],
+    ["disc_golf", "nlp_on_logs"],
+    ["little_league_scheduling", "nlp_on_logs"],
+    ["community_garden_plots", "nlp_on_logs"],
+    ["board_game_cafe_inventory", "nlp_on_logs"],
+    ["farmers_market_vendor_sales", "nlp_on_logs"],
+    ["youth_chess_tournament_pairings", "nlp_on_logs"]
+  ],
+  "_notes": {
+    "obvious_pairings": "The single most tutorial-grade technique per domain. The sampler down-weights this cell so generation keeps steering toward non-obvious fits (Section 6).",
+    "skip": "Nonsensical cells excluded from sampling. nlp_on_logs is skipped for domains whose data exhaust is essentially numeric/structured with no meaningful free text."
+  }
+}
