@@ -129,6 +129,8 @@ def _parse_json(text: str) -> dict:
 
 
 def _validate(data: dict, domain: str, technique: str) -> None:
+    if not isinstance(data, dict):
+        raise SystemExit("Model output is not a JSON object — committing nothing.")
     for key in REQUIRED_KEYS:
         if key not in data:
             raise SystemExit(f"Model output missing required key '{key}' — committing nothing.")
@@ -158,15 +160,23 @@ def unique_seed_id(base_id: str) -> str:
 
 
 def write_seed_files(seed_dir: Path, files: list[dict]) -> None:
+    """Validate every path first, then write — so a bad path in any file rejects
+    the whole seed without leaving a partial directory on disk ('write nothing')."""
     seed_root = seed_dir.resolve()
+    planned: list[tuple[Path, str]] = []
     for f in files:
-        rel = str(f["path"]).lstrip("/\\")
+        # Normalize separators so a model path behaves identically on Windows and
+        # Linux (a backslash is a literal char on POSIX but a separator on Windows),
+        # then strip leading separators so an absolute path can't escape the dir.
+        rel = str(f["path"]).replace("\\", "/").lstrip("/")
         target = (seed_dir / rel).resolve()
         # Reject path traversal — a generated 'path' must stay inside the seed dir.
         if seed_root != target and seed_root not in target.parents:
             raise SystemExit(f"Refusing to write outside the seed dir: {f['path']}")
+        planned.append((target, str(f["content"])))
+    for target, content in planned:
         target.parent.mkdir(parents=True, exist_ok=True)
-        store.write_text(target, str(f["content"]))
+        store.write_text(target, content)
 
 
 # --------------------------------------------------------------------------- #
@@ -265,11 +275,15 @@ def main() -> None:
     store.append_log(entry)
     store.regenerate_log_md()
 
-    commit_msg = data.get("commit_message") or f"feat(seed): {domain} x {technique} — {slug}"
-    store.write_text(store.LAST_COMMIT_MSG_PATH, commit_msg.strip() + "\n")
+    # Strip first, then fall back — a whitespace-only value would otherwise pass
+    # the `or` check and produce an empty `git commit -m`, which git rejects.
+    commit_msg = str(data.get("commit_message") or "").strip()
+    if not commit_msg:
+        commit_msg = f"feat(seed): {domain} x {technique} — {slug}"
+    store.write_text(store.LAST_COMMIT_MSG_PATH, commit_msg + "\n")
 
     print(f"Wrote seed: seeds/{seed_id}/  ({len(data['files'])} files)")
-    print(f"Commit message: {commit_msg.strip()}")
+    print(f"Commit message: {commit_msg}")
 
 
 if __name__ == "__main__":
