@@ -18,6 +18,8 @@ jobs:
       contents: write         # built-in GITHUB_TOKEN pushes to THIS repo; no PAT needed
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0   # full history so the rebase-on-push below is clean
 
       - uses: actions/setup-python@v5
         with:
@@ -40,7 +42,18 @@ jobs:
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit."
-          else
-            git commit -m "$(cat state/last_commit_msg.txt)"
-            git push
+            exit 0
           fi
+          git commit -m "$(cat state/last_commit_msg.txt)"
+          # Rebase onto any concurrent human push (e.g. a review commit) and retry,
+          # so a race on the default branch doesn't discard the day's seed.
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "$GITHUB_REF_NAME" && git push; then
+              exit 0
+            fi
+            git rebase --abort 2>/dev/null || true
+            echo "push attempt $attempt failed; retrying in 5s..."
+            sleep 5
+          done
+          echo "Failed to push after 3 attempts." >&2
+          exit 1
