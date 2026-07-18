@@ -62,6 +62,7 @@ def _list() -> None:
 
 
 def main() -> None:
+    store.configure_console()
     parser = argparse.ArgumentParser(description="Review (promote/reject) generated seeds.")
     sub = parser.add_subparsers(dest="command", required=True)
     sub.add_parser("list", help="List all seeds and their review status.")

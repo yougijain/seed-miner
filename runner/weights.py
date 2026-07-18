@@ -86,6 +86,7 @@ def maybe_refresh(matrix: dict, weights: dict, entries: list[dict], today: date)
 
 
 def main() -> None:
+    store.configure_console()
     matrix = store.load_json(store.MATRIX_PATH)
     entries = store.read_log()
     today = store.today()
