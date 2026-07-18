@@ -1,0 +1,5 @@
+# Runner dependency. The generator only needs the Anthropic SDK — it writes seed
+# files to disk but never executes them, so the data-science packages a seed might
+# import (pandas/numpy/networkx/scikit-learn/plotly) are NOT needed at generation
+# time. Install those only when you actually run a promoted seed.
+anthropic>=0.40
