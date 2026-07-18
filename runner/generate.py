@@ -217,6 +217,7 @@ def _stub_seed(domain: str, technique: str) -> dict:
 # Orchestration
 # --------------------------------------------------------------------------- #
 def main() -> None:
+    store.configure_console()
     parser = argparse.ArgumentParser(description="Generate one data-analyst project seed.")
     parser.add_argument(
         "--dry-run", action="store_true",

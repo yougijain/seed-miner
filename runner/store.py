@@ -10,9 +10,22 @@ from __future__ import annotations
 
 import json
 import os
+import sys
 import tempfile
 from datetime import date, datetime, timezone
 from pathlib import Path
+
+
+def configure_console() -> None:
+    """Make stdout/stderr tolerate any Unicode (e.g. a model title with an emoji)
+    even on a legacy Windows code page, so a local run never dies on a print."""
+    for stream in (sys.stdout, sys.stderr):
+        reconfigure = getattr(stream, "reconfigure", None)
+        if reconfigure is not None:
+            try:
+                reconfigure(encoding="utf-8", errors="replace")
+            except (ValueError, OSError):
+                pass
 
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = REPO_ROOT / "state"
