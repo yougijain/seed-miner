@@ -12,7 +12,7 @@ import json
 import os
 import sys
 import tempfile
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 
@@ -30,6 +30,7 @@ def configure_console() -> None:
 REPO_ROOT = Path(__file__).resolve().parent.parent
 STATE_DIR = REPO_ROOT / "state"
 SEEDS_DIR = REPO_ROOT / "seeds"
+REVIEWS_DIR = REPO_ROOT / "reviews"
 
 MATRIX_PATH = STATE_DIR / "matrix.json"
 LOG_PATH = STATE_DIR / "log.jsonl"
@@ -113,15 +114,10 @@ def slug_of(entry: dict) -> str:
     return seed_id.split("_", 1)[1] if "_" in seed_id else seed_id
 
 
-def _week_of(iso_date: str) -> date:
+def week_of(iso_date: str) -> date:
+    """Return the Monday of the week containing ``iso_date``."""
     d = date.fromisoformat(iso_date)
-    return d - _timedelta_days(d.weekday())
-
-
-def _timedelta_days(n: int):
-    from datetime import timedelta
-
-    return timedelta(days=n)
+    return d - timedelta(days=d.weekday())
 
 
 def render_log_md(entries: list[dict]) -> str:
@@ -142,7 +138,7 @@ def render_log_md(entries: list[dict]) -> str:
     # Group by the Monday of each seed's week, newest week first.
     weeks: dict[date, list[dict]] = {}
     for entry in entries:
-        weeks.setdefault(_week_of(entry["date"]), []).append(entry)
+        weeks.setdefault(week_of(entry["date"]), []).append(entry)
 
     lines = [header]
     for monday in sorted(weeks, reverse=True):

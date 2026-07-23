@@ -16,7 +16,9 @@ from __future__ import annotations
 
 import argparse
 import sys
+from datetime import date
 
+import digest
 import store
 import weights as weights_mod
 
@@ -39,6 +41,7 @@ def _set_status(ident: str, promoted: bool, note: str | None) -> None:
         entry["review_note"] = note
     store.rewrite_log(entries)
     store.regenerate_log_md(entries)
+    digest.regenerate(date.fromisoformat(entry["date"]), entries)
     # Re-derive weights now so the promotion steers the very next run.
     matrix = store.load_json(store.MATRIX_PATH)
     weights = weights_mod.rederive(matrix, entries, store.today())
