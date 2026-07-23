@@ -1,16 +1,15 @@
-"""Human review CLI — the one required action for the whole thing to work.
+"""Command-line interface for reviewing generated seeds.
 
-    python runner/review.py list                       # show seeds + review status
-    python runner/review.py promote <id> --note "why"  # checking the box
-    python runner/review.py reject  <id> --note "why"
+    python runner/review.py list                        # list seeds and status
+    python runner/review.py promote <id> --note "..."   # mark as promoted
+    python runner/review.py reject  <id> --note "..."   # mark as rejected
 
-Promoting/rejecting edits the seed's line in state/log.jsonl, regenerates LOG.md,
-and re-derives state/weights.json so the next run immediately leans toward what
-you liked. <id> may be the full id (2026-07-17_disc-golf-network) or just the
-slug (disc-golf-network) when unambiguous.
+Promoting or rejecting updates the seed's entry in state/log.jsonl, regenerates
+LOG.md, and re-derives state/weights.json so that the next run reflects the
+decision.
 
-Promotion is a signal, not the work: the payoff is forking a promoted seed into
-its own real repo and diverging from it by hand.
+<id> accepts either the full identifier (2026-07-17_disc-golf-network) or the
+slug alone (disc-golf-network) when it is unambiguous.
 """
 
 from __future__ import annotations
