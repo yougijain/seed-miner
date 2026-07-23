@@ -20,6 +20,7 @@ import random
 import re
 from pathlib import Path
 
+import digest
 import prompt as prompt_mod
 import store
 import weights as weights_mod
@@ -293,6 +294,7 @@ def main() -> None:
     }
     store.append_log(entry)
     store.regenerate_log_md()
+    digest.regenerate(today)
 
     # Strip first, then fall back — a whitespace-only value would otherwise pass
     # the `or` check and produce an empty `git commit -m`, which git rejects.

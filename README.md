@@ -35,8 +35,8 @@ Each run of `runner/generate.py` performs the following steps:
 4. Call the Claude API with the generation prompt for the selected cell.
 5. Validate the response and write the returned files to `seeds/<date>_<slug>/`.
 6. Append one record to `state/log.jsonl`.
-7. Regenerate `LOG.md` and write the commit message to
-   `state/last_commit_msg.txt`.
+7. Regenerate `LOG.md` and the current week's digest under `reviews/`, then
+   write the commit message to `state/last_commit_msg.txt`.
 
 The workflow then commits and pushes the result.
 
@@ -49,11 +49,13 @@ The workflow then commits and pushes the result.
 | `runner/prompt.py` | Generation prompt and prompt construction |
 | `runner/store.py` | Shared paths and all filesystem access |
 | `runner/review.py` | Command-line interface for promoting and rejecting seeds |
+| `runner/digest.py` | Generates the weekly review digests |
 | `state/matrix.json` | Domain and technique lists, obvious pairings, excluded cells |
 | `state/log.jsonl` | Append-only record of every generated seed |
 | `state/weights.json` | Current tag weights, derived from the log |
 | `seeds/` | One directory per generated seed |
-| `LOG.md` | Generated review surface |
+| `reviews/` | One generated Markdown digest per week, plus an index |
+| `LOG.md` | Generated index of every seed, grouped by week |
 | `.github/workflows/generate.yml` | Scheduled workflow |
 
 ## Sampling and weighting
@@ -130,8 +132,22 @@ All settings are optional environment variables.
 ## Reviewing seeds
 
 Review is a required manual step; without it the weights receive no signal.
-`LOG.md` lists every seed grouped by week, together with the model's own
-assessment of whether the seed is substantive.
+
+The [`reviews/`](reviews/) directory holds one digest per week and is the
+intended place to read. Each digest summarises every seed from that week: the
+cell it came from, the question it answers, the model's own assessment, its
+current status, and links to its files. [`reviews/README.md`](reviews/) indexes
+the weeks. `LOG.md` remains a compact index of every seed across all weeks.
+
+Digests are regenerated automatically on each run and after each decision. To
+rebuild them manually:
+
+```bash
+python runner/digest.py                    # all weeks
+python runner/digest.py --week 2026-07-20  # one week
+```
+
+Record decisions with:
 
 ```bash
 python runner/review.py list
@@ -139,9 +155,10 @@ python runner/review.py promote 2026-07-17_disc-golf-network --note "reason"
 python runner/review.py reject  2026-07-18_thrift-pricing-anomaly --note "reason"
 ```
 
-Promoting or rejecting updates `state/log.jsonl`, regenerates `LOG.md`, and
-re-derives `state/weights.json`. `LOG.md` is generated and should not be edited
-directly.
+Promoting or rejecting updates `state/log.jsonl`, regenerates `LOG.md` and the
+affected week's digest, and re-derives `state/weights.json`. Everything under
+`reviews/` and `LOG.md` itself is generated and should not be edited directly;
+`state/log.jsonl` is the source of truth.
 
 A promotion records a judgement; it does not itself produce finished work. A
 promoted seed is intended to be developed further in its own repository.
