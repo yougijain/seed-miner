@@ -114,6 +114,20 @@ def slug_of(entry: dict) -> str:
     return seed_id.split("_", 1)[1] if "_" in seed_id else seed_id
 
 
+def find_entry(entries: list[dict], ident: str) -> dict:
+    """Return the single log entry matching a full identifier or a bare slug.
+
+    Raises LookupError if there is no match, or more than one.
+    """
+    matches = [e for e in entries if e.get("id") == ident or slug_of(e) == ident]
+    if not matches:
+        raise LookupError(f"No seed matching {ident!r}.")
+    if len(matches) > 1:
+        joined = ", ".join(e["id"] for e in matches)
+        raise LookupError(f"{ident!r} is ambiguous; use the full identifier: {joined}")
+    return matches[0]
+
+
 def week_of(iso_date: str) -> date:
     """Return the Monday of the week containing ``iso_date``."""
     d = date.fromisoformat(iso_date)
@@ -154,6 +168,9 @@ def render_log_md(entries: list[dict]) -> str:
             review_note = entry.get("review_note")
             if review_note:
                 lines.append(f'      note: "{review_note}"')
+            graduated = entry.get("graduated_to")
+            if graduated:
+                lines.append(f"      graduated: {graduated}")
     return "\n".join(lines).rstrip() + "\n"
 
 

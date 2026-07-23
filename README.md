@@ -50,6 +50,7 @@ The workflow then commits and pushes the result.
 | `runner/store.py` | Shared paths and all filesystem access |
 | `runner/review.py` | Command-line interface for promoting and rejecting seeds |
 | `runner/digest.py` | Generates the weekly review digests |
+| `runner/fork.py` | Graduates a promoted seed into its own repository |
 | `state/matrix.json` | Domain and technique lists, obvious pairings, excluded cells |
 | `state/log.jsonl` | Append-only record of every generated seed |
 | `state/weights.json` | Current tag weights, derived from the log |
@@ -160,8 +161,36 @@ affected week's digest, and re-derives `state/weights.json`. Everything under
 `reviews/` and `LOG.md` itself is generated and should not be edited directly;
 `state/log.jsonl` is the source of truth.
 
-A promotion records a judgement; it does not itself produce finished work. A
-promoted seed is intended to be developed further in its own repository.
+A promotion records a judgement; it does not itself produce finished work.
+
+## Graduating a seed
+
+A promoted seed is developed further in its own repository. `runner/fork.py`
+performs that handover:
+
+```bash
+python runner/fork.py <id> --name project-name --dry-run   # preview
+python runner/fork.py <id> --name project-name             # create and push
+```
+
+It copies the seed's files to the root of a new repository, writes a project
+README recording where the seed came from, preserves the seed's original
+documentation as `SEED.md`, adds a `.gitignore`, and infers `requirements.txt`
+from the imports in the seed's Python files. It then makes the initial commit,
+creates the repository, pushes, and records the resulting URL as `graduated_to`
+on the seed's log entry so that `LOG.md` and the week's digest link to it.
+
+The initial commit is attributed to the local git identity and contains the
+generated seed unchanged, with its origin recorded in the commit message.
+Subsequent commits are ordinary work on an ordinary repository.
+
+Options: `--private` creates a private repository (public is the default),
+`--force` allows graduating a seed that has not been promoted, and `--dry-run`
+reports what would be created without creating or pushing anything.
+
+The command requires the GitHub CLI (`gh`) to be installed and authenticated.
+It is run locally and deliberately; no token is stored, and the scheduled
+workflow has no ability to create repositories.
 
 ## Scheduled execution
 
