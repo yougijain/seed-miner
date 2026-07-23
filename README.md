@@ -1,7 +1,5 @@
 # Seed Miner 🌱
 
-**This repository is an automated experiment, and it says so on purpose.**
-
 Every weekday morning a GitHub Action asks Claude to generate one small,
 self-contained data-analyst project — a "seed" — from an under-mined
 domain × technique pairing. It logs the seed, commits it, and steers future
