@@ -1,121 +1,221 @@
-# Seed Miner 🌱
+# Seed Miner
 
-Every weekday morning a GitHub Action asks Claude to generate one small,
-self-contained data-analyst project — a "seed" — from an under-mined
-domain × technique pairing. It logs the seed, commits it, and steers future
-generation toward the domain/technique combinations a human (me) has promoted.
+Automated generation of small, self-contained data-analysis project seeds, using
+preference-weighted sampling and a human review gate.
 
-Most seeds die. That's the design. The point is the handful that don't: the
-occasional pairing where applying a familiar technique to an unfamiliar domain
-*forces a genuine modification* to the technique, and that modification turns out
-to be interesting. Those get forked out into their own real repositories where
-actual human work happens.
+## Overview
 
-## What this is (and isn't)
+A scheduled GitHub Actions workflow runs once each weekday. On every run the
+system selects one `{domain, technique}` pair from a fixed matrix, asks the
+Claude API to produce a small standalone analysis project for that pair, commits
+the result to `seeds/`, and appends a record to an append-only log.
 
-- **Is:** a wide-net idea explorer with a preference-weighted (bandit-style)
-  sampler and a human review gate.
-- **Isn't:** machine learning in the training sense — there aren't enough
-  labeled events for that. And it isn't a disguised commit-graph padder: the
-  automation is stated openly here and in every generated seed's README, and the
-  commits are made by a clearly-labeled bot identity.
+Each generated seed is reviewed manually and marked as promoted or rejected.
+Those decisions feed back into the sampler: domains and techniques that produce
+promoted seeds are sampled more often, while the sampler continues to explore
+the rest of the matrix.
 
-The honest one-line description: *"It tracks which domain/technique combinations I
-promote and biases generation toward those, while forcing continued exploration."*
-That's it. A few dozen lines of arithmetic, no black box.
+Seeds are produced by an automated process and committed under a dedicated bot
+identity (`seed-miner-bot`). The generated code is not executed by the system;
+it is written to the repository for later human review.
+
+The intent is breadth. Most seeds are expected to be discarded. The value lies
+in the small number of pairings where applying a technique to an unfamiliar
+domain requires a genuine adaptation of that technique, which can then be
+developed further in a separate repository.
 
 ## How it works
 
+Each run of `runner/generate.py` performs the following steps:
+
+1. Re-derive tag weights from the log if the last derivation is at least seven
+   days old.
+2. Score every valid matrix cell and sample one cell in proportion to its score.
+3. Collect recent seed titles to discourage repetition.
+4. Call the Claude API with the generation prompt for the selected cell.
+5. Validate the response and write the returned files to `seeds/<date>_<slug>/`.
+6. Append one record to `state/log.jsonl`.
+7. Regenerate `LOG.md` and write the commit message to
+   `state/last_commit_msg.txt`.
+
+The workflow then commits and pushes the result.
+
+## Repository layout
+
+| Path | Description |
+|------|-------------|
+| `runner/generate.py` | Entry point: sample a cell, call the API, write the seed, update the log |
+| `runner/weights.py` | Derives domain and technique weights from the log |
+| `runner/prompt.py` | Generation prompt and prompt construction |
+| `runner/store.py` | Shared paths and all filesystem access |
+| `runner/review.py` | Command-line interface for promoting and rejecting seeds |
+| `state/matrix.json` | Domain and technique lists, obvious pairings, excluded cells |
+| `state/log.jsonl` | Append-only record of every generated seed |
+| `state/weights.json` | Current tag weights, derived from the log |
+| `seeds/` | One directory per generated seed |
+| `LOG.md` | Generated review surface |
+| `.github/workflows/generate.yml` | Scheduled workflow |
+
+## Sampling and weighting
+
+The matrix contains 12 domains and 8 techniques. Seven combinations are excluded
+as unworkable (text-analysis techniques applied to domains with no meaningful
+free text), leaving 89 valid cells.
+
+**Per-run sampling.** Each valid cell is scored as:
+
 ```
-   .github/workflows/generate.yml   cron: weekday mornings
-                │
-                ▼
-   runner/generate.py
-     1. weekly?  → runner/weights.py re-derives tag scores from the log
-     2. sample a {domain, technique} cell   (weighted, not argmax → keeps exploring)
-     3. fetch recent seeds to avoid repeats
-     4. call Claude (Haiku 4.5) with the Section-5 generation prompt
-     5. write seeds/<date>_<slug>/{main.py, README.md}
-     6. append one line to state/log.jsonl
-     7. regenerate LOG.md  and  state/last_commit_msg.txt
-                │
-                ▼
-   git commit (as seed-miner-bot) + push
-```
-
-### The moving parts
-
-| Path | Role |
-|------|------|
-| `runner/generate.py` | Main loop: sample → call Claude → write → log |
-| `runner/weights.py`  | Re-derives tag scores from the log (the self-steering part) |
-| `runner/prompt.py`   | The runtime generation prompt handed to the model |
-| `runner/store.py`    | Shared paths + JSON/log/`LOG.md` I/O |
-| `runner/review.py`   | Human review CLI: promote / reject a seed |
-| `state/matrix.json`  | The domain × technique grid + obvious-pairing/skip metadata |
-| `state/log.jsonl`    | Source of truth — one line per generated seed |
-| `state/weights.json` | Current tag scores, re-derived weekly (derived from the log) |
-| `seeds/`             | One dated, slugged folder per seed |
-| `LOG.md`             | Human-readable weekly review surface (generated) |
-
-## The self-steering part (in one paragraph)
-
-Each run scores every valid matrix cell as
-`w_domain × w_technique × novelty_bonus × non_obvious_bonus` and samples one cell
-*proportional* to that score (not the maximum — exploration must continue).
-Weekly, each domain and technique tag is rescored as an exponentially-weighted,
-Laplace-smoothed promote rate: recent promotions dominate (decay ≈ 0.9/week),
-seeds I never reviewed count as weak negatives after 14 days, and every tag is
-floored so nothing is permanently frozen out. See [runner/weights.py](runner/weights.py).
-
-## Reviewing (the non-negotiable part)
-
-This whole thing is worthless if the weekly review doesn't happen. Skim
-[LOG.md](LOG.md) — each seed carries the model's own honest `self:` assessment of
-whether it has legs or is filler — then promote the good ones:
-
-```bash
-python runner/review.py list
-python runner/review.py promote 2026-07-17_disc-golf-network --note "betweenness-on-throwing-lines angle is real"
-python runner/review.py reject  2026-07-18_thrift-pricing-anomaly --note "just IQR on a toy dataset"
+score = w_domain × w_technique × novelty_bonus × obviousness_penalty
 ```
 
-Promotion updates `state/log.jsonl`, regenerates `LOG.md`, and re-derives the
-weights so the next run leans toward what you liked. **Promotion is a signal, not
-the work** — the actual value comes from forking a promoted seed into its own
-real repo and diverging from it by hand.
+- `novelty_bonus` favours domains and techniques absent from the last ten runs.
+- `obviousness_penalty` reduces the weight of the single most conventional
+  technique for each domain, which is declared in `state/matrix.json`.
 
-## Running it yourself
+A cell is then drawn at random in proportion to its score rather than by taking
+the maximum, so that exploration continues.
+
+**Weight derivation.** At most once a week, each domain and technique is scored
+as an exponentially weighted, Laplace-smoothed promotion rate over the log.
+Recent decisions dominate (decay 0.9 per week), unreviewed seeds count as weak
+negatives after 14 days, unseen tags receive a neutral prior, and every score is
+floored so that no tag is permanently excluded. See
+[`runner/weights.py`](runner/weights.py) for the formula.
+
+## Installation
+
+Requires Python 3.12 or later.
 
 ```bash
 pip install -r requirements.txt
+```
 
-# Try the full pipeline with a stubbed seed — no API key, no cost:
+The runner depends only on the Anthropic SDK. Packages that a generated seed may
+import (pandas, numpy, scikit-learn, and similar) are not required to generate
+seeds and should be installed only when running a seed.
+
+## Usage
+
+Exercise the full pipeline without an API key or any cost:
+
+```bash
 python runner/generate.py --dry-run
+```
 
-# A real run (needs ANTHROPIC_API_KEY):
-export ANTHROPIC_API_KEY=sk-ant-...
+Perform a real run:
+
+```bash
+export ANTHROPIC_API_KEY=...
 python runner/generate.py
 ```
 
-Config via environment (all optional): `SEED_MINER_MODEL` (default
-`claude-haiku-4-5`), `SEED_MINER_MAX_TOKENS` (default `8000`), `SEED_MINER_DATE`
-(override "today", for testing), `SEED_MINER_SEED` (seed the RNG for reproducible
-sampling).
+Re-derive weights without generating a seed:
 
-## Cost & safety
+```bash
+python runner/weights.py
+```
 
-Default model is Haiku 4.5 with a hard `max_tokens` ceiling: roughly 3¢ per run,
-comfortably under $1/month at a weekday cadence. Fund the Anthropic Console with a
-small prepaid balance, set a low monthly spend cap, and **do not enable
-auto-reload** — a runaway cron/retry misfire should hit the ceiling and stop, not
-top up a card. If generation returns malformed output the run fails loudly and
-commits nothing, rather than committing a broken state.
+### Configuration
 
-## Honest failure mode
+All settings are optional environment variables.
 
-If nothing ever gets promoted, this reduces to *"I automated making filler nobody
-looks at"* — which is worse than no project at all. The entire thing rests on the
-weekly review actually happening and something eventually hitting. Base rate for
-this kind of tail-end search is roughly one promotable seed per 30–50. If you
-won't commit to the review, build a curated shortlist instead.
+| Variable | Default | Purpose |
+|----------|---------|---------|
+| `ANTHROPIC_API_KEY` | — | API credential. Required for real runs. |
+| `SEED_MINER_MODEL` | `claude-haiku-4-5` | Model used for generation |
+| `SEED_MINER_MAX_TOKENS` | `8000` | Upper bound on output tokens per run |
+| `SEED_MINER_DATE` | current UTC date | Overrides the run date, for testing |
+| `SEED_MINER_SEED` | — | Seeds the random number generator, for reproducible sampling |
+
+## Reviewing seeds
+
+Review is a required manual step; without it the weights receive no signal.
+`LOG.md` lists every seed grouped by week, together with the model's own
+assessment of whether the seed is substantive.
+
+```bash
+python runner/review.py list
+python runner/review.py promote 2026-07-17_disc-golf-network --note "reason"
+python runner/review.py reject  2026-07-18_thrift-pricing-anomaly --note "reason"
+```
+
+Promoting or rejecting updates `state/log.jsonl`, regenerates `LOG.md`, and
+re-derives `state/weights.json`. `LOG.md` is generated and should not be edited
+directly.
+
+A promotion records a judgement; it does not itself produce finished work. A
+promoted seed is intended to be developed further in its own repository.
+
+## Scheduled execution
+
+The workflow in `.github/workflows/generate.yml` runs at 15:00 UTC, Monday to
+Friday, and can also be triggered manually. It requires one repository secret:
+
+| Secret | Purpose |
+|--------|---------|
+| `ANTHROPIC_API_KEY` | Passed to the generation step as an environment variable |
+
+The repository's Actions setting for workflow permissions must allow read and
+write access so that the workflow can push its commit.
+
+To trigger a run manually:
+
+```bash
+gh workflow run generate.yml
+```
+
+## Security
+
+**Credential handling.** The API key is stored as a GitHub Actions secret and
+injected as an environment variable into the generation step alone. It is never
+written to the repository or to the log, and `.env` is excluded by
+`.gitignore`. GitHub masks secret values in workflow output.
+
+**Generated code is untrusted input.** Seeds are model output committed without
+review. The runner writes them to disk and never executes them, and the workflow
+does not run them either. Read a seed before running it, and prefer an isolated
+environment such as a dedicated virtual environment or container.
+
+**Workflow trigger surface.** The workflow responds only to `schedule` and
+`workflow_dispatch`. It has no `pull_request` or comment trigger, so a fork or an
+external contributor cannot cause it to execute with repository credentials.
+`workflow_dispatch` requires write access to the repository.
+
+**Token scope.** The workflow requests `contents: write`, the minimum required
+to commit the generated seed. No other permission is granted.
+
+**Filesystem confinement.** File paths returned by the model are normalised,
+stripped of leading separators, and rejected if they resolve outside the seed
+directory. All paths are validated before any file is written, so a seed
+containing an invalid path is rejected without leaving partial output on disk.
+
+**Model input.** Titles from earlier seeds are included in later prompts to
+discourage repetition. That text is whitespace-collapsed and truncated so it
+cannot introduce structure into the prompt. The model is given no tools and no
+repository access; its output is treated purely as data.
+
+**Failure behaviour.** Malformed or truncated model output aborts the run before
+any file or log entry is written, and the workflow's commit step does not run
+after a failed generation step. A failed run therefore commits nothing.
+
+## Cost
+
+At the default model and token ceiling a run costs on the order of a few cents,
+which is under one US dollar per month at a weekday cadence. Two controls are
+recommended in the Anthropic Console: a prepaid balance and a low monthly spend
+limit. Automatic top-up should remain disabled so that a scheduling or retry
+fault stops at the limit rather than continuing to bill.
+
+## Limitations
+
+The system searches a deliberately wide space and most output is expected to be
+discarded. A realistic expectation is roughly one seed worth developing out of
+every 30 to 50 generated.
+
+The weighting is a sampling heuristic, not a trained model. With few reviewed
+seeds the signal is weak, and the smoothing prior keeps early weights close to
+neutral by design.
+
+The approach depends on the review step being carried out. If seeds are never
+reviewed, every tag decays toward its floor, the log accumulates unreviewed
+entries, and the output has no filter applied to it.

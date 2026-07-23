@@ -1,23 +1,26 @@
-"""Preference-weighted sampler weights — the self-steering part (spec Section 6).
+"""Derivation of the sampler's domain and technique weights.
 
-This is NOT a trained model. Each domain and technique tag gets a score equal to
-an exponentially-weighted, Laplace-smoothed promote rate derived from the log:
+Each tag receives a score equal to an exponentially weighted, Laplace-smoothed
+promotion rate computed from the seed log:
 
     score(tag) = (PRIOR_STRENGTH * PRIOR_MEAN + Σ promoted_i · decay^age_weeks_i)
-                 -------------------------------------------------------------
+                 ---------------------------------------------------------------
                  (PRIOR_STRENGTH + Σ decay^age_weeks_i)
 
-then floored at FLOOR so nothing is permanently frozen out.
+The result is floored at FLOOR so that no tag is permanently excluded.
 
-- Recent promotions dominate (decay ≈ 0.9 per week).
-- Unreviewed seeds (promoted == null) count as weak implicit negatives once they
-  are UNREVIEWED_NEGATIVE_DAYS old — they didn't earn a look. Younger unreviewed
-  seeds contribute no signal yet.
-- The smoothing prior means an unseen tag scores PRIOR_MEAN (neutral), so
-  exploration is preserved and small samples aren't over-trusted.
+Properties:
 
-Run standalone (``python runner/weights.py``) to force a re-derivation, or let
-``generate.py`` call ``maybe_refresh`` at the start of a run once 7 days pass.
+- Recent decisions dominate; older ones decay by DECAY per week.
+- Unreviewed seeds contribute no signal until they are UNREVIEWED_NEGATIVE_DAYS
+  old, after which they count as weak negatives.
+- The smoothing prior gives an unseen tag a neutral score of PRIOR_MEAN, which
+  preserves exploration and avoids over-trusting small samples.
+
+This is a weighted-sampling heuristic, not a trained model.
+
+Run ``python runner/weights.py`` to force a re-derivation. Otherwise
+``generate.py`` calls ``maybe_refresh`` once REFRESH_INTERVAL_DAYS have elapsed.
 """
 
 from __future__ import annotations
