@@ -24,13 +24,10 @@ import weights as weights_mod
 
 
 def _find(entries: list[dict], ident: str) -> dict:
-    matches = [e for e in entries if e["id"] == ident or store.slug_of(e) == ident]
-    if not matches:
-        sys.exit(f"No seed matching '{ident}'. Try `review.py list`.")
-    if len(matches) > 1:
-        ids = ", ".join(e["id"] for e in matches)
-        sys.exit(f"'{ident}' is ambiguous — use the full id. Candidates: {ids}")
-    return matches[0]
+    try:
+        return store.find_entry(entries, ident)
+    except LookupError as exc:
+        sys.exit(f"{exc} Run `python runner/review.py list` to see available seeds.")
 
 
 def _set_status(ident: str, promoted: bool, note: str | None) -> None:

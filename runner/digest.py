@@ -91,6 +91,12 @@ def render_week(monday: date, entries: list[dict]) -> str:
             lines += ["", f"**Model's assessment.** {entry['self_assessment']}"]
         if entry.get("review_note"):
             lines += ["", f"**Review note.** {entry['review_note']}"]
+        if entry.get("graduated_to"):
+            lines += [
+                "",
+                f"**Graduated.** Developed further at <{entry['graduated_to']}> "
+                f"({entry.get('graduated_at', '?')}).",
+            ]
         lines += ["", f"**Files.** {_file_links(seed_id)}"]
 
     return "\n".join(lines) + "\n"
