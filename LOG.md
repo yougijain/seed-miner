@@ -3,5 +3,10 @@
 
 # Review log
 
-No seeds generated yet. Run `python runner/generate.py --dry-run` to try the
-pipeline locally, or wait for the scheduled workflow to produce the first seed.
+Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
+
+
+## Week of 2026-07-20
+
+- [ ] `2026-07-23_farmers-market-vendor-adjacency-causal` — Vendor Layout Spillover: Does Adjacency Confound the Market-Day Effect on Sales?
+      self: "Has legs: the tension between observational causal inference (built for independent units) and spatial-network data (where treatment and confounders are entangled by geography) forces a genuine methodological compromise that exposes the limits of covariate adjustment."
