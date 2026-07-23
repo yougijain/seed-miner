@@ -17,11 +17,11 @@ jobs:
     permissions:
       contents: write         # built-in GITHUB_TOKEN pushes to THIS repo; no PAT needed
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
         with:
           fetch-depth: 0   # full history so the rebase-on-push below is clean
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: '3.12'
 
