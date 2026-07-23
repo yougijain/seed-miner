@@ -1,27 +1,27 @@
 {
-  "generated_at": null,
+  "generated_at": "2026-07-23",
   "domains": {
-    "competitive_birdwatching": 1.0,
-    "community_theater_box_office": 1.0,
-    "beekeeping_colony_health": 1.0,
-    "disc_golf": 1.0,
-    "thrift_store_pricing": 1.0,
-    "amateur_radio_contest_logs": 1.0,
-    "little_league_scheduling": 1.0,
-    "community_garden_plots": 1.0,
-    "local_trail_conditions": 1.0,
-    "board_game_cafe_inventory": 1.0,
-    "farmers_market_vendor_sales": 1.0,
-    "youth_chess_tournament_pairings": 1.0
+    "competitive_birdwatching": 0.5,
+    "community_theater_box_office": 0.5,
+    "beekeeping_colony_health": 0.5,
+    "disc_golf": 0.5,
+    "thrift_store_pricing": 0.5,
+    "amateur_radio_contest_logs": 0.5,
+    "little_league_scheduling": 0.5,
+    "community_garden_plots": 0.5,
+    "local_trail_conditions": 0.5,
+    "board_game_cafe_inventory": 0.5,
+    "farmers_market_vendor_sales": 0.5,
+    "youth_chess_tournament_pairings": 0.5
   },
   "techniques": {
-    "anomaly_detection": 1.0,
-    "forecasting": 1.0,
-    "matching_recommendation": 1.0,
-    "clustering_segmentation": 1.0,
-    "graph_network_analysis": 1.0,
-    "optimization_scheduling": 1.0,
-    "nlp_on_logs": 1.0,
-    "causal_inference_observational": 1.0
+    "anomaly_detection": 0.5,
+    "forecasting": 0.5,
+    "matching_recommendation": 0.5,
+    "clustering_segmentation": 0.5,
+    "graph_network_analysis": 0.5,
+    "optimization_scheduling": 0.5,
+    "nlp_on_logs": 0.5,
+    "causal_inference_observational": 0.5
   }
 }
