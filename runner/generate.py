@@ -18,27 +18,26 @@ import json
 import os
 import random
 import re
-import sys
 from pathlib import Path
 
 import prompt as prompt_mod
 import store
 import weights as weights_mod
 
-# ---- Model / sampling configuration ---------------------------------------- #
-DEFAULT_MODEL = "claude-haiku-4-5"     # spec default; Sonnet if you want less-generic code
-DEFAULT_MAX_TOKENS = 8000              # hard ceiling — a runaway generation can't balloon
+# ---- Model and sampling configuration -------------------------------------- #
+DEFAULT_MODEL = "claude-haiku-4-5"     # override with SEED_MINER_MODEL
+DEFAULT_MAX_TOKENS = 8000              # upper bound on output tokens per run
 
-NOVELTY_BONUS = 1.5                    # reward tags absent from the last N runs
-OBVIOUS_PENALTY = 0.3                  # down-weight the hardcoded obvious pairing per domain
-NOVELTY_WINDOW = 10                    # "recent" window for the novelty bonus
-REPEAT_WINDOW = 30                     # how many recent seeds to show the model to avoid repeats
+NOVELTY_BONUS = 1.5                    # multiplier for a tag absent from recent runs
+OBVIOUS_PENALTY = 0.3                  # multiplier for a domain's obvious technique
+NOVELTY_WINDOW = 10                    # runs considered "recent" for the novelty bonus
+REPEAT_WINDOW = 30                     # seeds shown to the model to discourage repeats
 
 REQUIRED_KEYS = ("title", "slug", "one_line", "files")
 
 
 # --------------------------------------------------------------------------- #
-# Cell sampling (spec Section 6, per-run part)
+# Cell sampling
 # --------------------------------------------------------------------------- #
 def choose_cell(matrix: dict, weights: dict, entries: list[dict], rng: random.Random):
     """Sample one {domain, technique} cell proportional to its score."""
@@ -71,11 +70,22 @@ def choose_cell(matrix: dict, weights: dict, entries: list[dict], rng: random.Ra
     return rng.choices(cells, weights=scores, k=1)[0]
 
 
+def _flatten(text: str, limit: int = 300) -> str:
+    """Collapse whitespace and truncate a field taken from a previous seed.
+
+    Earlier titles are fed back into the next prompt. Collapsing newlines keeps
+    each entry on a single list item, so text authored by a previous generation
+    cannot introduce new structure into the prompt.
+    """
+    return " ".join(str(text).split())[:limit]
+
+
 def recent_digest(entries: list[dict]) -> str:
-    """A compact list of recent titles + one-liners for the AVOID-REPEATS block."""
-    lines = []
-    for e in entries[-REPEAT_WINDOW:]:
-        lines.append(f"- {e.get('title', '(untitled)')}: {e.get('one_line', '')}".rstrip())
+    """Build the recent-seeds list used by the prompt's avoid-repeats section."""
+    lines = [
+        f"- {_flatten(e.get('title', '(untitled)'))}: {_flatten(e.get('one_line', ''))}".rstrip()
+        for e in entries[-REPEAT_WINDOW:]
+    ]
     return "\n".join(reversed(lines))  # most recent first
 
 
@@ -104,7 +114,7 @@ def generate_seed(domain: str, technique: str, recent: str, dry_run: bool) -> di
         )
     text = "".join(block.text for block in response.content if block.type == "text")
     data = _parse_json(text)
-    _validate(data, domain, technique)
+    _validate(data)
     return data
 
 
@@ -128,7 +138,8 @@ def _parse_json(text: str) -> dict:
     raise SystemExit("Could not parse JSON from the model response — committing nothing.")
 
 
-def _validate(data: dict, domain: str, technique: str) -> None:
+def _validate(data: object) -> None:
+    """Reject malformed model output before anything is written to disk."""
     if not isinstance(data, dict):
         raise SystemExit("Model output is not a JSON object — committing nothing.")
     for key in REQUIRED_KEYS:
@@ -160,19 +171,24 @@ def unique_seed_id(base_id: str) -> str:
 
 
 def write_seed_files(seed_dir: Path, files: list[dict]) -> None:
-    """Validate every path first, then write — so a bad path in any file rejects
-    the whole seed without leaving a partial directory on disk ('write nothing')."""
+    """Write the generated files into ``seed_dir``.
+
+    Every destination is validated before anything is written, so a seed with an
+    invalid path is rejected without leaving a partial directory behind.
+    """
     seed_root = seed_dir.resolve()
     planned: list[tuple[Path, str]] = []
     for f in files:
-        # Normalize separators so a model path behaves identically on Windows and
-        # Linux (a backslash is a literal char on POSIX but a separator on Windows),
-        # then strip leading separators so an absolute path can't escape the dir.
-        rel = str(f["path"]).replace("\\", "/").lstrip("/")
+        # Normalise separators so a path behaves identically on Windows and Linux
+        # (a backslash is a literal filename character on POSIX), then drop any
+        # leading separator so an absolute path cannot escape the seed directory.
+        rel = str(f["path"]).replace("\\", "/").strip().lstrip("/")
+        if not rel or rel in (".", ".."):
+            raise SystemExit(f"Invalid file path in model output: {f['path']!r}")
         target = (seed_dir / rel).resolve()
-        # Reject path traversal — a generated 'path' must stay inside the seed dir.
+        # Confine writes to the seed directory; reject any traversal attempt.
         if seed_root != target and seed_root not in target.parents:
-            raise SystemExit(f"Refusing to write outside the seed dir: {f['path']}")
+            raise SystemExit(f"Refusing to write outside the seed directory: {f['path']!r}")
         planned.append((target, str(f["content"])))
     for target, content in planned:
         target.parent.mkdir(parents=True, exist_ok=True)
@@ -180,8 +196,10 @@ def write_seed_files(seed_dir: Path, files: list[dict]) -> None:
 
 
 # --------------------------------------------------------------------------- #
-# Dry-run stub — a real, tiny, honest seed so the full pipeline is exercisable
-# without an API key.
+# Dry-run stub
+#
+# Produces a minimal but valid seed so the sample -> write -> log -> review
+# pipeline can be exercised locally without an API key or any cost.
 # --------------------------------------------------------------------------- #
 def _stub_seed(domain: str, technique: str) -> dict:
     slug = f"{slugify(domain)}-{slugify(technique)}-stub"
@@ -201,13 +219,14 @@ def _stub_seed(domain: str, technique: str) -> dict:
     )
     readme = (
         f"# {title}\n\n"
-        "**Auto-generated seed (dry-run stub).** This one was produced by the local "
-        "`--dry-run` path, not the model — it only demonstrates that the farm's "
-        "sample → write → log → review pipeline works end to end.\n\n"
-        f"**Question:** does a trivial 2-sigma rule flag the planted spike in a "
-        f"synthetic *{domain}* series? (Yes — that's the point of the plant.)\n\n"
-        "**Real vs synthetic:** fully synthetic. **Limitation:** it's a stub; there "
-        "is no non-obvious modification of the technique here.\n"
+        "Automatically generated seed (dry-run stub). Produced by the local "
+        "`--dry-run` path rather than the model; it exists only to verify that the "
+        "generation pipeline works end to end.\n\n"
+        f"**Question:** does a two-sigma rule flag the planted spike in a synthetic "
+        f"*{domain}* series?\n\n"
+        "**Data:** fully synthetic.\n\n"
+        "**Limitation:** this is a stub. It contains no non-obvious adaptation of "
+        "the technique and is not intended for review.\n"
     )
     return {
         "title": title,
