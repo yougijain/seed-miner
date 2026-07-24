@@ -10,3 +10,5 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-07-23_farmers-market-vendor-adjacency-causal` — Vendor Layout Spillover: Does Adjacency Confound the Market-Day Effect on Sales?
       self: "Has legs: the tension between observational causal inference (built for independent units) and spatial-network data (where treatment and confounders are entangled by geography) forces a genuine methodological compromise that exposes the limits of covariate adjustment."
+- [ ] `2026-07-24_brood-temporal-hypergraph-collapse` — Temporal Hypergraph Collapse: Detecting Brood-Pattern Asymmetries via Time-Windowed Subgraph Isomorphism
+      self: "The seam is real: standard network analysis treats contacts as undirected snapshots, but brood disease propagation is causal (nurse→brood, not vice versa) and time-indexed; we must engineer directed lagged edges from temporal contact sequences. This forces explicit handling of the temporal asymmetry rather than applying off-the-shelf centrality."
