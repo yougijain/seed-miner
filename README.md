@@ -15,9 +15,10 @@ Those decisions feed back into the sampler: domains and techniques that produce
 promoted seeds are sampled more often, while the sampler continues to explore
 the rest of the matrix.
 
-Seeds are produced by an automated process and committed under a dedicated bot
-identity (`seed-miner-bot`). The generated code is not executed by the system;
-it is written to the repository for later human review.
+Seeds are produced by an automated process. The generation step is described
+here and in this README; the workflow commits its output to the repository, and
+the generated code is not executed by the system. It is written to the
+repository for later human review.
 
 The intent is breadth. Most seeds are expected to be discarded. The value lies
 in the small number of pairings where applying a technique to an unfamiliar
