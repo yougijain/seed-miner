@@ -37,8 +37,11 @@ jobs:
 
       - name: Commit and push
         run: |
-          git config user.name  "seed-miner-bot"
-          git config user.email "seed-miner-bot@users.noreply.github.com"
+          # Author seed commits as the repository owner so they count toward the
+          # contribution graph. The noreply address keeps the real email private
+          # in this public repo while still being linked to the account.
+          git config user.name  "yougijain"
+          git config user.email "62231373+yougijain@users.noreply.github.com"
           git add -A
           if git diff --cached --quiet; then
             echo "No changes to commit."
