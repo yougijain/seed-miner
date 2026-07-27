@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-07-27
+
+- [ ] `2026-07-27_beekeeper-log-coherence-decay` — Beekeeper Log Variance Decay: Inferring Inspection Fatigue from NLP Coherence Drift
+      self: "This has legs: NLP on logs assumes static vocabulary/style, but beekeepers' logs naturally drift in precision, detail, and reference consistency as fatigue or attention shifts. That drift itself—measured as token-sequence entropy or semantic coherence within rolling windows—becomes a signal. The insight is that the *noise floor* of the writing is more stable and informative than the surface content."
+
 ## Week of 2026-07-20
 
 - [ ] `2026-07-23_farmers-market-vendor-adjacency-causal` — Vendor Layout Spillover: Does Adjacency Confound the Market-Day Effect on Sales?
