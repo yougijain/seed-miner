@@ -12,6 +12,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: NLP on logs assumes static vocabulary/style, but beekeepers' logs naturally drift in precision, detail, and reference consistency as fatigue or attention shifts. That drift itself—measured as token-sequence entropy or semantic coherence within rolling windows—becomes a signal. The insight is that the *noise floor* of the writing is more stable and informative than the surface content."
 - [ ] `2026-07-28_farmers-market-vendor-anomaly-composition` — Vendor Revenue Stability via Isolation Forest on Compositional Sales Data
       self: "This has legs: the core insight is that anomaly detection on compositional data (proportions summing to 1) breaks standard distance metrics, and forcing iso-forest to work on the simplex requires either log-ratio transformation or a custom metric—revealing why anomalies in *budget allocation* across categories (not just total revenue) signal real vendor stress."
+- [ ] `2026-07-29_trail-bottleneck-hypergraph` — Trail Bottleneck Detection via Temporal Hypergraph Switching
+      self: "This has genuine friction: standard graph_network_analysis assumes nodes and edges are pre-defined, but trail data arrives as continuous trajectories (hyperedges spanning many GPS points). The insight is that bottlenecks aren't structural—they're behavioral regime shifts in the *temporal* edge-formation process, requiring us to bin time windows and detect when the digraph transitions from high out-degree (parallel dispersal) to low out-degree (forced serialization). That modification is the technique, not window dressing."
 
 ## Week of 2026-07-20
 
