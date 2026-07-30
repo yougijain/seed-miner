@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the core insight is that anomaly detection on compositional data (proportions summing to 1) breaks standard distance metrics, and forcing iso-forest to work on the simplex requires either log-ratio transformation or a custom metric—revealing why anomalies in *budget allocation* across categories (not just total revenue) signal real vendor stress."
 - [ ] `2026-07-29_trail-bottleneck-hypergraph` — Trail Bottleneck Detection via Temporal Hypergraph Switching
       self: "This has genuine friction: standard graph_network_analysis assumes nodes and edges are pre-defined, but trail data arrives as continuous trajectories (hyperedges spanning many GPS points). The insight is that bottlenecks aren't structural—they're behavioral regime shifts in the *temporal* edge-formation process, requiring us to bin time windows and detect when the digraph transitions from high out-degree (parallel dispersal) to low out-degree (forced serialization). That modification is the technique, not window dressing."
+- [ ] `2026-07-30_theater-copurchase-demand-reversal` — Demand Reversal Detection in Community Theater Box Office via Isolation Forest on Ticket-Category Co-Purchase Anomalies
+      self: "This forces isolation forest to operate on a compositional simplex (ticket-category mix per transaction) where the anomaly isn't high/low volume but structural *change in co-purchase ratios*, requiring the detector to see that same-day transactions suddenly decouple from historical pairing patterns—real theater data would show this during cast changes, venue reconfiguration, or dynamic pricing, making it a genuine domain friction point."
 
 ## Week of 2026-07-20
 
