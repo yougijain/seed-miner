@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has genuine friction: standard graph_network_analysis assumes nodes and edges are pre-defined, but trail data arrives as continuous trajectories (hyperedges spanning many GPS points). The insight is that bottlenecks aren't structural—they're behavioral regime shifts in the *temporal* edge-formation process, requiring us to bin time windows and detect when the digraph transitions from high out-degree (parallel dispersal) to low out-degree (forced serialization). That modification is the technique, not window dressing."
 - [ ] `2026-07-30_theater-copurchase-demand-reversal` — Demand Reversal Detection in Community Theater Box Office via Isolation Forest on Ticket-Category Co-Purchase Anomalies
       self: "This forces isolation forest to operate on a compositional simplex (ticket-category mix per transaction) where the anomaly isn't high/low volume but structural *change in co-purchase ratios*, requiring the detector to see that same-day transactions suddenly decouple from historical pairing patterns—real theater data would show this during cast changes, venue reconfiguration, or dynamic pricing, making it a genuine domain friction point."
+- [ ] `2026-07-31_beekeeper-entailment-drift-nlp` — Entailment Drift in Beekeeper Inspection Logs: Detecting Colony Decline via NLP Premise-Hypothesis Collapse
+      self: "This forces NLP beyond sentiment/classification: logs are treated as mini-arguments where premise (observations) should entail hypothesis (health status), and that relationship degrades under colony stress—a genuine mismatch between log structure (causal narratives) and standard NLP tasks (labels or bags-of-words)."
 
 ## Week of 2026-07-20
 
