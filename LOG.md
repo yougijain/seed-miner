@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-08-03
+
+- [ ] `2026-08-03_garden-pollinator-isolation-graph` — Pollinator Isolation in Garden Networks: Detecting Crop-Specific Connectivity Collapse
+      self: "The genuine tension: standard node/edge removal doesn't model garden dynamics; we must redefine edges as time-windowed flowering overlaps, forcing the network to be *reconstructed* at each week. This breaks traditional centrality assumptions and reveals when scheduling creates de-facto isolation despite physical proximity."
+
 ## Week of 2026-07-27
 
 - [ ] `2026-07-27_beekeeper-log-coherence-decay` — Beekeeper Log Variance Decay: Inferring Inspection Fatigue from NLP Coherence Drift
