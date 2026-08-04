@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-08-03_garden-pollinator-isolation-graph` — Pollinator Isolation in Garden Networks: Detecting Crop-Specific Connectivity Collapse
       self: "The genuine tension: standard node/edge removal doesn't model garden dynamics; we must redefine edges as time-windowed flowering overlaps, forcing the network to be *reconstructed* at each week. This breaks traditional centrality assumptions and reveals when scheduling creates de-facto isolation despite physical proximity."
+- [ ] `2026-08-04_garden-forecast-rotation-structural-break` — Plot Yield Forecast Under Crop Rotation Structural Break
+      self: "This has real legs: the tension is genuine—standard forecasting assumes stationarity, but crop rotation *intentionally breaks* the feature-to-target relationship. The forecaster must detect this structural break, not just fit trend. Most garden forecasts ignore rotation; this one treats rotation-induced non-stationarity as the core problem."
 
 ## Week of 2026-07-27
 
