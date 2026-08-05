@@ -12,6 +12,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "The genuine tension: standard node/edge removal doesn't model garden dynamics; we must redefine edges as time-windowed flowering overlaps, forcing the network to be *reconstructed* at each week. This breaks traditional centrality assumptions and reveals when scheduling creates de-facto isolation despite physical proximity."
 - [ ] `2026-08-04_garden-forecast-rotation-structural-break` — Plot Yield Forecast Under Crop Rotation Structural Break
       self: "This has real legs: the tension is genuine—standard forecasting assumes stationarity, but crop rotation *intentionally breaks* the feature-to-target relationship. The forecaster must detect this structural break, not just fit trend. Most garden forecasts ignore rotation; this one treats rotation-induced non-stationarity as the core problem."
+- [ ] `2026-08-05_qso-duration-clustering-scheduling-constraint` — QSO Duration Clustering Under Scheduling Constraint Collapse
+      self: "This has legs: the tension is real—optimization schedulers assume unimodal task durations, but amateur radio logs exhibit persistent bimodal structure (short contestQSOs vs. long rag-chew conversations). The interesting bit is that *forcing* a bin-packing solver to minimize idle time on a mixed-mode duration stream makes the solver a mode-detector: it will cluster durations not to recover ground truth but to pack efficiently, revealing which operators were actually ragchewin in a contest-logged session."
 
 ## Week of 2026-07-27
 
