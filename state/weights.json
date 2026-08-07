@@ -1,9 +1,9 @@
 {
-  "generated_at": "2026-07-30",
+  "generated_at": "2026-08-07",
   "domains": {
     "competitive_birdwatching": 0.5,
     "community_theater_box_office": 0.5,
-    "beekeeping_colony_health": 0.5,
+    "beekeeping_colony_health": 0.27624309392265195,
     "disc_golf": 0.5,
     "thrift_store_pricing": 0.5,
     "amateur_radio_contest_logs": 0.5,
@@ -11,7 +11,7 @@
     "community_garden_plots": 0.5,
     "local_trail_conditions": 0.5,
     "board_game_cafe_inventory": 0.5,
-    "farmers_market_vendor_sales": 0.5,
+    "farmers_market_vendor_sales": 0.2781022959019419,
     "youth_chess_tournament_pairings": 0.5
   },
   "techniques": {
@@ -19,9 +19,9 @@
     "forecasting": 0.5,
     "matching_recommendation": 0.5,
     "clustering_segmentation": 0.5,
-    "graph_network_analysis": 0.5,
+    "graph_network_analysis": 0.27624309392265195,
     "optimization_scheduling": 0.5,
     "nlp_on_logs": 0.5,
-    "causal_inference_observational": 0.5
+    "causal_inference_observational": 0.2781022959019419
   }
 }
