@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-08-10
+
+- [ ] `2026-08-10_boardgame-session-forecast-inventory-coupling` — Multiplayer Session Duration Forecasting Under Inventory Coupling
+      self: "Has real teeth: standard forecasting assumes regressors are exogenous, but inventory-constrained domains have inventory *levels driven by the quantity being forecast*, creating simultaneity bias that requires structural detection or differencing, not just lag-augmentation."
+
 ## Week of 2026-08-03
 
 - [ ] `2026-08-03_garden-pollinator-isolation-graph` — Pollinator Isolation in Garden Networks: Detecting Crop-Specific Connectivity Collapse
