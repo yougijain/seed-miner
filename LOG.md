@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-08-10_boardgame-session-forecast-inventory-coupling` — Multiplayer Session Duration Forecasting Under Inventory Coupling
       self: "Has real teeth: standard forecasting assumes regressors are exogenous, but inventory-constrained domains have inventory *levels driven by the quantity being forecast*, creating simultaneity bias that requires structural detection or differencing, not just lag-augmentation."
+- [ ] `2026-08-11_ll-schedule-timing-anomaly` — Game-Slot Imbalance Detection in Little League Schedules via Isolation Forest on Fixture Timing Skew
+      self: "This has real legs: isolation forest is built to find points in feature space that don't cluster with peers, but little-league fairness requires detecting when a *team's aggregated exposure* (to prime time slots + strong opponents) deviates from the population norm—a shape that isolation forest can surface without needing a fairness-specific loss function, revealing hidden biases that slot-counting methods miss."
 
 ## Week of 2026-08-03
 
