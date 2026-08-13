@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has real legs: isolation forest is built to find points in feature space that don't cluster with peers, but little-league fairness requires detecting when a *team's aggregated exposure* (to prime time slots + strong opponents) deviates from the population norm—a shape that isolation forest can surface without needing a fairness-specific loss function, revealing hidden biases that slot-counting methods miss."
 - [ ] `2026-08-12_birding-rarity-nlp-sparse` — Sighting Rarity Inference from Sparse Fieldnote NLP: Detecting Rare-Bird Evidence When Text Is the Only Ground Truth
       self: "Non-obvious angle: typical NLP on birding logs looks for species extraction or location tagging. This instead flips the task: use linguistic markers (uncertainty hedges, repeat verification language, tangential detail) as implicit labels for rarity, treating textual *style* as a proxy for the observer's implicit confidence in identification—which only correlates with rarity because rare birds demand more justification in fieldnotes. The seam is that NLP wasn't designed for this—you're mining *absence of fluency* as the signal, not content."
+- [ ] `2026-08-13_theater-churn-bipartite-projection` — Subscriber Loyalty Churn via Temporal Bipartite Projection Collapse
+      self: "Real leg: traditional churn prediction uses RFM or propensity models; this asks whether network cohesion *itself* (subscriber clustering by show co-attendance) is a leading indicator, requiring the technique to handle projection instability under missing future edges—a genuine mismatch between static graph methods and subscription renewal timing."
 
 ## Week of 2026-08-03
 
