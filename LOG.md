@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "Non-obvious angle: typical NLP on birding logs looks for species extraction or location tagging. This instead flips the task: use linguistic markers (uncertainty hedges, repeat verification language, tangential detail) as implicit labels for rarity, treating textual *style* as a proxy for the observer's implicit confidence in identification—which only correlates with rarity because rare birds demand more justification in fieldnotes. The seam is that NLP wasn't designed for this—you're mining *absence of fluency* as the signal, not content."
 - [ ] `2026-08-13_theater-churn-bipartite-projection` — Subscriber Loyalty Churn via Temporal Bipartite Projection Collapse
       self: "Real leg: traditional churn prediction uses RFM or propensity models; this asks whether network cohesion *itself* (subscriber clustering by show co-attendance) is a leading indicator, requiring the technique to handle projection instability under missing future edges—a genuine mismatch between static graph methods and subscription renewal timing."
+- [ ] `2026-08-14_garden-plot-microclimate-anomaly` — Plot Microclimate Drift via Isolation Forest on Temporal Heteroskedasticity
+      self: "This forces isolation forest to work on a derived feature (rolling variance, not raw yield) that standard tutorials never mention, and the domain constraint (plots are embedded in space/time with implicit dependencies) makes the technique's assumption of i.i.d. points genuinely problematic—the seams show because the algorithm wasn't built to handle plots where 'anomalousness' means temporal structure collapse rather than outlier magnitude."
 
 ## Week of 2026-08-03
 
