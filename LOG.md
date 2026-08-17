@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-08-17
+
+- [ ] `2026-08-17_chess-pairings-fairness-relaxation` — Youth Chess Tournament Fairness via Scheduling Constraint Relaxation
+      self: "The insight is real: standard Swiss-system optimizers minimize travel/color balance but ignore cohort fairness; forcing the optimizer to respect age-bracket homogeneity constraints exposes which brackets are too small or imbalanced to schedule fairly, and the *constraint violation cost* becomes a fairness diagnostic."
+
 ## Week of 2026-08-10
 
 - [ ] `2026-08-10_boardgame-session-forecast-inventory-coupling` — Multiplayer Session Duration Forecasting Under Inventory Coupling
