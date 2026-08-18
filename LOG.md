@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-08-17_chess-pairings-fairness-relaxation` — Youth Chess Tournament Fairness via Scheduling Constraint Relaxation
       self: "The insight is real: standard Swiss-system optimizers minimize travel/color balance but ignore cohort fairness; forcing the optimizer to respect age-bracket homogeneity constraints exposes which brackets are too small or imbalanced to schedule fairly, and the *constraint violation cost* becomes a fairness diagnostic."
+- [ ] `2026-08-18_cafe-game-matching-inventory-decay` — Game-Shelf Affinity via Bipartite Matching Under Inventory Decay
+      self: "The seam is real: standard matching/recommendation assumes positive signal (co-rental), but here we must build affinity from *synchronized unavailability windows*, which inverts the typical data shape and requires the matcher to treat temporal gaps as evidence—this forces a genuine modification to the technique's input pipeline."
 
 ## Week of 2026-08-10
 
