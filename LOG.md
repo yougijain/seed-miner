@@ -12,6 +12,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "The insight is real: standard Swiss-system optimizers minimize travel/color balance but ignore cohort fairness; forcing the optimizer to respect age-bracket homogeneity constraints exposes which brackets are too small or imbalanced to schedule fairly, and the *constraint violation cost* becomes a fairness diagnostic."
 - [ ] `2026-08-18_cafe-game-matching-inventory-decay` — Game-Shelf Affinity via Bipartite Matching Under Inventory Decay
       self: "The seam is real: standard matching/recommendation assumes positive signal (co-rental), but here we must build affinity from *synchronized unavailability windows*, which inverts the typical data shape and requires the matcher to treat temporal gaps as evidence—this forces a genuine modification to the technique's input pipeline."
+- [ ] `2026-08-19_garden-yield-forecast-pollinator-lag` — Garden Plot Yield Forecasting Under Pollinator Lag: Can ARIMA Adapt When the Causal Driver (Pollinator Activity) Lags the Predictor (Bloom Timing)?
+      self: "This has legs: the tension is real—standard ARIMA assumes exogenous lags or simple autocorrelation, but cross-plot pollinator effects create time-varying, nonlinear lag that the technique wasn't designed to detect. The domain forces a methodological adaptation."
 
 ## Week of 2026-08-10
 
