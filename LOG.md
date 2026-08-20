@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "The seam is real: standard matching/recommendation assumes positive signal (co-rental), but here we must build affinity from *synchronized unavailability windows*, which inverts the typical data shape and requires the matcher to treat temporal gaps as evidence—this forces a genuine modification to the technique's input pipeline."
 - [ ] `2026-08-19_garden-yield-forecast-pollinator-lag` — Garden Plot Yield Forecasting Under Pollinator Lag: Can ARIMA Adapt When the Causal Driver (Pollinator Activity) Lags the Predictor (Bloom Timing)?
       self: "This has legs: the tension is real—standard ARIMA assumes exogenous lags or simple autocorrelation, but cross-plot pollinator effects create time-varying, nonlinear lag that the technique wasn't designed to detect. The domain forces a methodological adaptation."
+- [ ] `2026-08-20_theater-closure-causal-proxy` — Show Cancellation Causality via Proxy Shock: Disentangling Demand Collapse from Substitution Using Staggered Theater Closures
+      self: "Has legs: the technique genuinely breaks because staggered adoption + spatial confounding + competing outcomes (substitute vs. lost) forces a causal estimator designed for panel data to handle missing units and absorb endogeneity from within-theater spillover. The seams show when DiD assumptions meet the irregular structure of community theater scheduling."
 
 ## Week of 2026-08-10
 
