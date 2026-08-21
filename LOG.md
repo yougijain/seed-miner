@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the tension is real—standard ARIMA assumes exogenous lags or simple autocorrelation, but cross-plot pollinator effects create time-varying, nonlinear lag that the technique wasn't designed to detect. The domain forces a methodological adaptation."
 - [ ] `2026-08-20_theater-closure-causal-proxy` — Show Cancellation Causality via Proxy Shock: Disentangling Demand Collapse from Substitution Using Staggered Theater Closures
       self: "Has legs: the technique genuinely breaks because staggered adoption + spatial confounding + competing outcomes (substitute vs. lost) forces a causal estimator designed for panel data to handle missing units and absorb endogeneity from within-theater spillover. The seams show when DiD assumptions meet the irregular structure of community theater scheduling."
+- [ ] `2026-08-21_thrift-condition-graph-clustering` — Thrift Price-Condition Graph Clustering: Detecting Hidden Item Categories When Condition Labels Are Noisy Proxies
+      self: "The non-obvious bit is using graph clustering on a bipartite structure (donor → item → condition → price) where the anomaly signal isn't in the graph topology itself, but in the *degradation of node label coherence*. Standard k-means on price+condition fails silently when condition is corrupted; graph label propagation surfaces the failure *structurally* (label disagreement among neighbors), forcing the analyst to detect category-hiding noise rather than assume features are independent. This is genuinely different from applying NetworkX to a toy graph."
 
 ## Week of 2026-08-10
 

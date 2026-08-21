@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-14",
+  "generated_at": "2026-08-21",
   "domains": {
     "competitive_birdwatching": 0.5,
-    "community_theater_box_office": 0.2781022959019419,
-    "beekeeping_colony_health": 0.15143841635097596,
+    "community_theater_box_office": 0.1977762341824175,
+    "beekeeping_colony_health": 0.16278665091924235,
     "disc_golf": 0.5,
-    "thrift_store_pricing": 0.285505664875283,
-    "amateur_radio_contest_logs": 0.5,
+    "thrift_store_pricing": 0.2983025043422696,
+    "amateur_radio_contest_logs": 0.27995835496518595,
     "little_league_scheduling": 0.5,
-    "community_garden_plots": 0.5,
-    "local_trail_conditions": 0.27995835496518595,
+    "community_garden_plots": 0.19709012475823512,
+    "local_trail_conditions": 0.2928460189139294,
     "board_game_cafe_inventory": 0.5,
-    "farmers_market_vendor_sales": 0.20061404389570955,
+    "farmers_market_vendor_sales": 0.2133913165623862,
     "youth_chess_tournament_pairings": 0.5
   },
   "techniques": {
-    "anomaly_detection": 0.19439082155236967,
-    "forecasting": 0.5,
+    "anomaly_detection": 0.20704584358411743,
+    "forecasting": 0.2818110693843005,
     "matching_recommendation": 0.5,
-    "clustering_segmentation": 0.285505664875283,
-    "graph_network_analysis": 0.19880874447973082,
-    "optimization_scheduling": 0.5,
-    "nlp_on_logs": 0.19435045471673248,
-    "causal_inference_observational": 0.29101751980118057
+    "clustering_segmentation": 0.20111410272835462,
+    "graph_network_analysis": 0.1599409336629843,
+    "optimization_scheduling": 0.27995835496518595,
+    "nlp_on_logs": 0.20700462885281112,
+    "causal_inference_observational": 0.303711600509089
   }
 }
