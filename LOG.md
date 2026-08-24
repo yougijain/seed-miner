@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-08-24
+
+- [ ] `2026-08-24_board-game-cafe-rental-duration-forecasting-endogenous` — Game Rental Duration Forecasting Under Inventory Feedback Loops
+      self: "The key tension is real: standard forecasting assumes covariates drive outcomes independently, but here game availability (the covariate) is directly *caused* by recent rental decisions (the outcome), creating a feedback loop that breaks Granger causality assumptions and forces the forecaster to either detect endogeneity explicitly or absorb it as time-series autocorrelation misattribution."
+
 ## Week of 2026-08-17
 
 - [ ] `2026-08-17_chess-pairings-fairness-relaxation` — Youth Chess Tournament Fairness via Scheduling Constraint Relaxation
