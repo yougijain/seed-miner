@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-08-24_board-game-cafe-rental-duration-forecasting-endogenous` — Game Rental Duration Forecasting Under Inventory Feedback Loops
       self: "The key tension is real: standard forecasting assumes covariates drive outcomes independently, but here game availability (the covariate) is directly *caused* by recent rental decisions (the outcome), creating a feedback loop that breaks Granger causality assumptions and forces the forecaster to either detect endogeneity explicitly or absorb it as time-series autocorrelation misattribution."
+- [ ] `2026-08-25_disc-golf-anomaly-temporal-clustering` — Disc Golf Round Anomalies via Multivariate Temporal Clustering Collapse
+      self: "This has legs: the core insight is real—disc golf scores form Markov-like chains where hole difficulty and player fatigue are path-dependent, so flagging anomalies requires detecting when *sequences* violate learned transition patterns, not when individual scores deviate. Standard isolation forest or LOF treat each round as a point in feature space and miss the sequential structure entirely. Forcing anomaly detection to work on temporal state-transition matrices is a genuine domain mismatch that reveals something about both techniques."
 
 ## Week of 2026-08-17
 
