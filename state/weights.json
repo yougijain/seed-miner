@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-21",
+  "generated_at": "2026-08-28",
   "domains": {
-    "competitive_birdwatching": 0.5,
-    "community_theater_box_office": 0.1977762341824175,
-    "beekeeping_colony_health": 0.16278665091924235,
+    "competitive_birdwatching": 0.27995835496518595,
+    "community_theater_box_office": 0.15756973351156128,
+    "beekeeping_colony_health": 0.17455940310624107,
     "disc_golf": 0.5,
-    "thrift_store_pricing": 0.2983025043422696,
-    "amateur_radio_contest_logs": 0.27995835496518595,
-    "little_league_scheduling": 0.5,
-    "community_garden_plots": 0.19709012475823512,
-    "local_trail_conditions": 0.2928460189139294,
-    "board_game_cafe_inventory": 0.5,
-    "farmers_market_vendor_sales": 0.2133913165623862,
+    "thrift_store_pricing": 0.3108417029484051,
+    "amateur_radio_contest_logs": 0.2928460189139294,
+    "little_league_scheduling": 0.2818110693843005,
+    "community_garden_plots": 0.15658178612377008,
+    "local_trail_conditions": 0.3055032623187517,
+    "board_game_cafe_inventory": 0.2836602389138262,
+    "farmers_market_vendor_sales": 0.22636707015238733,
     "youth_chess_tournament_pairings": 0.5
   },
   "techniques": {
-    "anomaly_detection": 0.20704584358411743,
-    "forecasting": 0.2818110693843005,
+    "anomaly_detection": 0.1296119150940513,
+    "forecasting": 0.20329445725079381,
     "matching_recommendation": 0.5,
-    "clustering_segmentation": 0.20111410272835462,
-    "graph_network_analysis": 0.1599409336629843,
-    "optimization_scheduling": 0.27995835496518595,
-    "nlp_on_logs": 0.20700462885281112,
-    "causal_inference_observational": 0.303711600509089
+    "clustering_segmentation": 0.2139004694776876,
+    "graph_network_analysis": 0.13471866384427428,
+    "optimization_scheduling": 0.2928460189139294,
+    "nlp_on_logs": 0.16340700462356458,
+    "causal_inference_observational": 0.31612180930772593
   }
 }
