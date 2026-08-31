@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-08-31
+
+- [ ] `2026-08-31_bee-mite-causal-temporal-confounding` — Colony Collapse Causal Inference Under Temporal Confounding: Isolating Mite Load Effects When Inspection Timing Is Endogenous to Health
+      self: "This has real teeth: causal inference assumes stable treatment assignment, but here the 'treatment' (high mite count at time t) is only observed *because* the beekeeper scheduled an inspection—which they did *because* the colony looked sick. Standard regression fails because inspection timing is a post-treatment confounder that opens a causal path backwards through health status. The seam is that observational causal inference methods (backdoor criterion, IPW) must treat inspection scheduling as endogenous, forcing a non-standard adjustment that most tutorial examples dodge."
+
 ## Week of 2026-08-24
 
 - [ ] `2026-08-24_board-game-cafe-rental-duration-forecasting-endogenous` — Game Rental Duration Forecasting Under Inventory Feedback Loops
