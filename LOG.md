@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-08-31_bee-mite-causal-temporal-confounding` — Colony Collapse Causal Inference Under Temporal Confounding: Isolating Mite Load Effects When Inspection Timing Is Endogenous to Health
       self: "This has real teeth: causal inference assumes stable treatment assignment, but here the 'treatment' (high mite count at time t) is only observed *because* the beekeeper scheduled an inspection—which they did *because* the colony looked sick. Standard regression fails because inspection timing is a post-treatment confounder that opens a causal path backwards through health status. The seam is that observational causal inference methods (backdoor criterion, IPW) must treat inspection scheduling as endogenous, forcing a non-standard adjustment that most tutorial examples dodge."
+- [ ] `2026-09-01_disc-golf-player-matching-routing-endogeneity` — Disc Golf Player Matching Under Course Routing Endogeneity
+      self: "Interesting because standard matching (collaborative filtering, cosine similarity) assumes features are independent; here score similarity is a collider that encodes unobserved routing choice, requiring the matcher to either stratify-by-routing or use a two-stage approach (infer routing, then match), making the technique substantially modified."
 
 ## Week of 2026-08-24
 
