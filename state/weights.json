@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-08-28",
+  "generated_at": "2026-09-04",
   "domains": {
-    "competitive_birdwatching": 0.27995835496518595,
-    "community_theater_box_office": 0.15756973351156128,
-    "beekeeping_colony_health": 0.17455940310624107,
+    "competitive_birdwatching": 0.2928460189139294,
+    "community_theater_box_office": 0.1331991401235941,
+    "beekeeping_colony_health": 0.18671214552354012,
     "disc_golf": 0.5,
-    "thrift_store_pricing": 0.3108417029484051,
-    "amateur_radio_contest_logs": 0.2928460189139294,
-    "little_league_scheduling": 0.2818110693843005,
-    "community_garden_plots": 0.15658178612377008,
-    "local_trail_conditions": 0.3055032623187517,
-    "board_game_cafe_inventory": 0.2836602389138262,
-    "farmers_market_vendor_sales": 0.22636707015238733,
-    "youth_chess_tournament_pairings": 0.5
+    "thrift_store_pricing": 0.21207268742860721,
+    "amateur_radio_contest_logs": 0.3055032623187517,
+    "little_league_scheduling": 0.2946698074173245,
+    "community_garden_plots": 0.13298305967723478,
+    "local_trail_conditions": 0.317868124983168,
+    "board_game_cafe_inventory": 0.20319889923899487,
+    "farmers_market_vendor_sales": 0.23947258728794507,
+    "youth_chess_tournament_pairings": 0.2836602389138262
   },
   "techniques": {
-    "anomaly_detection": 0.1296119150940513,
-    "forecasting": 0.20329445725079381,
-    "matching_recommendation": 0.5,
-    "clustering_segmentation": 0.2139004694776876,
-    "graph_network_analysis": 0.13471866384427428,
-    "optimization_scheduling": 0.2928460189139294,
-    "nlp_on_logs": 0.16340700462356458,
-    "causal_inference_observational": 0.31612180930772593
+    "anomaly_detection": 0.13998140391797634,
+    "forecasting": 0.1613154103793745,
+    "matching_recommendation": 0.2818110693843005,
+    "clustering_segmentation": 0.2268826748280796,
+    "graph_network_analysis": 0.11763890958130371,
+    "optimization_scheduling": 0.20839273631104965,
+    "nlp_on_logs": 0.17520131146772486,
+    "causal_inference_observational": 0.2153871281979905
   }
 }

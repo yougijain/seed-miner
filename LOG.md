@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: bin-packing treats QSO duration as a univariate duration-fit problem, but amateur radio contests hide a *bimodal mode-switching distribution* (contest-mode ≈30s, ragchew-mode ≈5min) that endogenously emerges from propagation conditions. The optimization must pack heterogeneous durations into fixed contest windows, and *constraint violations* (QSOs that don't fit neatly) act as a proxy signal for latent mode clusters. The technique adaptation is real: traditional bin-packing assumes unimodal item sizes; we force it to detect when the 'items' (QSOs) come from hidden mixture components by analyzing how hard the packing fails."
 - [ ] `2026-09-03_chess-pairing-endogenous-treatment` — Youth Chess Pairing Fairness via Treatment-Assignment Endogeneity: Isolating Skill Balance from Algorithmic Bias
       self: "This has legs: the key insight is that causal_inference_observational assumes treatment is assigned exogenously, but tournament pairing algorithms *generate* their own treatment labels (skill-group mismatch) based on biased rating inputs, creating a feedback loop that standard backdoor adjustment must explicitly untangle by modeling the pairing algorithm's decision rule as a confounder."
+- [ ] `2026-09-04_qso-band-switching-constraint-clustering` — QSO Frequency-Band Switching Detection via Scheduling Constraint Violation Clustering
+      self: "This has legs: bin-packing fails *because* the domain violates its assumptions (operators don't stay on one band for contiguous intervals), and the failure pattern itself becomes the signal—not a bug, but a feature detector."
 
 ## Week of 2026-08-24
 
