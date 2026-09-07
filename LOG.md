@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-09-07
+
+- [ ] `2026-09-07_thrift-tripartite-matching-noisy-condition` — Thrift Item Matching via Donor-Price-Condition Tripartite Graphs: Recovering Hidden Categories When Condition Labels Are Noisy Proxies
+      self: "The seam is real: standard matching assumes clean node attributes (condition labels), but thrift pricing *does* encode category membership through price clustering even when condition descriptions are unreliable OCR/freeform text. The technique adaptation—using price quantile matching as a fallback when condition similarity fails—forces a genuine methodological choice about feature reliability."
+
 ## Week of 2026-08-31
 
 - [ ] `2026-08-31_bee-mite-causal-temporal-confounding` — Colony Collapse Causal Inference Under Temporal Confounding: Isolating Mite Load Effects When Inspection Timing Is Endogenous to Health
