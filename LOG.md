@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-09-07_thrift-tripartite-matching-noisy-condition` — Thrift Item Matching via Donor-Price-Condition Tripartite Graphs: Recovering Hidden Categories When Condition Labels Are Noisy Proxies
       self: "The seam is real: standard matching assumes clean node attributes (condition labels), but thrift pricing *does* encode category membership through price clustering even when condition descriptions are unreliable OCR/freeform text. The technique adaptation—using price quantile matching as a fallback when condition similarity fails—forces a genuine methodological choice about feature reliability."
+- [ ] `2026-09-08_game-cafe-scheduling-conflict-cascades` — Game Checkout Scheduling Under Conflict Cascades: Detecting Latent Game Incompatibility When Bin-Packing Fails
+      self: "Genuine modification: standard bin-packing assumes items are interchangeable; here, the *failures* of the packing constraint reveal hidden game-affinity structure because checkout timing creates cascading conflicts. The technique isn't detecting conflicts directly—it's mining the scheduler's own infeasibility to infer player behavior."
 
 ## Week of 2026-08-31
 
