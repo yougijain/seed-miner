@@ -12,6 +12,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "The seam is real: standard matching assumes clean node attributes (condition labels), but thrift pricing *does* encode category membership through price clustering even when condition descriptions are unreliable OCR/freeform text. The technique adaptation—using price quantile matching as a fallback when condition similarity fails—forces a genuine methodological choice about feature reliability."
 - [ ] `2026-09-08_game-cafe-scheduling-conflict-cascades` — Game Checkout Scheduling Under Conflict Cascades: Detecting Latent Game Incompatibility When Bin-Packing Fails
       self: "Genuine modification: standard bin-packing assumes items are interchangeable; here, the *failures* of the packing constraint reveal hidden game-affinity structure because checkout timing creates cascading conflicts. The technique isn't detecting conflicts directly—it's mining the scheduler's own infeasibility to infer player behavior."
+- [ ] `2026-09-09_trail-matching-temporal-coabsence` — Trail Difficulty Matching via Temporal Co-Absence Graphs
+      self: "This genuinely breaks standard matching: typical trail recommendation learns from co-hiking; this learns from co-closure patterns. The modification (treating absence as presence) exposes whether trail infrastructure management reveals latent difficulty structure that user behavior obscures."
 
 ## Week of 2026-08-31
 
