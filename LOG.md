@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "Genuine modification: standard bin-packing assumes items are interchangeable; here, the *failures* of the packing constraint reveal hidden game-affinity structure because checkout timing creates cascading conflicts. The technique isn't detecting conflicts directly—it's mining the scheduler's own infeasibility to infer player behavior."
 - [ ] `2026-09-09_trail-matching-temporal-coabsence` — Trail Difficulty Matching via Temporal Co-Absence Graphs
       self: "This genuinely breaks standard matching: typical trail recommendation learns from co-hiking; this learns from co-closure patterns. The modification (treating absence as presence) exposes whether trail infrastructure management reveals latent difficulty structure that user behavior obscures."
+- [ ] `2026-09-10_disc-golf-course-graph-inference` — Disc Golf Course Layout Recovery from Player Clustering Collapse
+      self: "This forces a genuine modification: standard graph clustering assumes static nodes/edges, but here the 'edges' (plausible score sequences) are dynamic and conditioned on hole difficulty. The technique must recover course structure from the *failure* of clustering, not from explicit co-occurrence data."
 
 ## Week of 2026-08-31
 
