@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This genuinely breaks standard matching: typical trail recommendation learns from co-hiking; this learns from co-closure patterns. The modification (treating absence as presence) exposes whether trail infrastructure management reveals latent difficulty structure that user behavior obscures."
 - [ ] `2026-09-10_disc-golf-course-graph-inference` — Disc Golf Course Layout Recovery from Player Clustering Collapse
       self: "This forces a genuine modification: standard graph clustering assumes static nodes/edges, but here the 'edges' (plausible score sequences) are dynamic and conditioned on hole difficulty. The technique must recover course structure from the *failure* of clustering, not from explicit co-occurrence data."
+- [ ] `2026-09-11_theater-timing-clustering-segmentation` — Show-Type Segmentation via Purchase-Timing Clustering When Categorical Features Fail
+      self: "This has legs: matching_recommendation (via bipartite matching on arrival-time similarity) is forced to work on a temporal feature-space where the 'items' being matched are purchase *intervals*, not shows, revealing whether time-based affinity recovers audience behavior that categorical matching misses entirely."
 
 ## Week of 2026-08-31
 
