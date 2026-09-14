@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-09-14
+
+- [ ] `2026-09-14_llb-slot-fairness-matching` — Little League Schedule Fairness via Bipartite Game-Slot Matching Under Endogenous Imbalance
+      self: "This has legs: the core insight is that standard bipartite matching treats slot costs as fixed, but in little league scheduling, slot attractiveness (weekend morning, vs. weekday evening) depends on how saturated it already is. By running matching under cost endogeneity, the algorithm's own unmatched-or-costly assignments reveal which teams face structural disadvantage *because* the matching process itself concentrates scarce slots, creating the inequity it then must balance. This is a genuine modification to matching_recommendation's assumptions."
+
 ## Week of 2026-09-07
 
 - [ ] `2026-09-07_thrift-tripartite-matching-noisy-condition` — Thrift Item Matching via Donor-Price-Condition Tripartite Graphs: Recovering Hidden Categories When Condition Labels Are Noisy Proxies
