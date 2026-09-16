@@ -12,6 +12,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the core insight is that standard bipartite matching treats slot costs as fixed, but in little league scheduling, slot attractiveness (weekend morning, vs. weekday evening) depends on how saturated it already is. By running matching under cost endogeneity, the algorithm's own unmatched-or-costly assignments reveal which teams face structural disadvantage *because* the matching process itself concentrates scarce slots, creating the inequity it then must balance. This is a genuine modification to matching_recommendation's assumptions."
 - [ ] `2026-09-15_birdwatch-rarity-temporal-matching` — Rare-Bird Sighting Matching via Temporal Scarcity Co-Occurrence
       self: "This forces matching_recommendation to reverse-engineer affinity from temporal *gaps* instead of co-presence, which is structurally novel: the algorithm must detect that two rare species are 'similar' because they're never sighted together (both avoid common habitats), which inverts the typical matching signal."
+- [ ] `2026-09-16_trail-nlp-absence-clustering` — Trail Maintenance Log Clustering via Temporal Absence Patterns in Repair Notes
+      self: "The non-obvious seam: standard NLP+clustering assumes signals live in text *content* (what's written), but trail maintenance logs encode affinity in *when paragraphs don't mention overlapping segments*—absence as signal. This forces the NLP pipeline to convert temporal gaps in maintenance windows (parsed from dates/text) into co-absence vectors, then cluster on silence rather than speech. Real enough to expose whether domain-specific temporal structure beats generic text embeddings."
 
 ## Week of 2026-09-07
 
