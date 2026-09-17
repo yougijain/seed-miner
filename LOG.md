@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This forces matching_recommendation to reverse-engineer affinity from temporal *gaps* instead of co-presence, which is structurally novel: the algorithm must detect that two rare species are 'similar' because they're never sighted together (both avoid common habitats), which inverts the typical matching signal."
 - [ ] `2026-09-16_trail-nlp-absence-clustering` — Trail Maintenance Log Clustering via Temporal Absence Patterns in Repair Notes
       self: "The non-obvious seam: standard NLP+clustering assumes signals live in text *content* (what's written), but trail maintenance logs encode affinity in *when paragraphs don't mention overlapping segments*—absence as signal. This forces the NLP pipeline to convert temporal gaps in maintenance windows (parsed from dates/text) into co-absence vectors, then cluster on silence rather than speech. Real enough to expose whether domain-specific temporal structure beats generic text embeddings."
+- [ ] `2026-09-17_birding-corarity-absence-graph` — Competitive Birdwatching Species Co-Rarity Detection via Joint-Absence Network Clustering
+      self: "This has genuine legs: the technique modification (flipping from co-presence to co-absence edges) is forced by the domain constraint (sightings are too sparse to cluster on presence), and the resulting graph exhibits different topology than presence-based networks, making the inversion the actual analytical insight rather than a gimmick."
 
 ## Week of 2026-09-07
 
