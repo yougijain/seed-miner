@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "The non-obvious seam: standard NLP+clustering assumes signals live in text *content* (what's written), but trail maintenance logs encode affinity in *when paragraphs don't mention overlapping segments*—absence as signal. This forces the NLP pipeline to convert temporal gaps in maintenance windows (parsed from dates/text) into co-absence vectors, then cluster on silence rather than speech. Real enough to expose whether domain-specific temporal structure beats generic text embeddings."
 - [ ] `2026-09-17_birding-corarity-absence-graph` — Competitive Birdwatching Species Co-Rarity Detection via Joint-Absence Network Clustering
       self: "This has genuine legs: the technique modification (flipping from co-presence to co-absence edges) is forced by the domain constraint (sightings are too sparse to cluster on presence), and the resulting graph exhibits different topology than presence-based networks, making the inversion the actual analytical insight rather than a gimmick."
+- [ ] `2026-09-18_chess-pairing-round-sequence-clustering` — Youth Chess Pairing Fairness via Round-Sequence Clustering Collapse
+      self: "Non-obvious because standard clustering works on player attributes (rating, age, gender), but this forces clustering to work *backward* from round-sequence data—opponent rating sequences encode unobserved group structure, and clustering failure (fragmentation into isolated players) is the signal of unfairness rather than success."
 
 ## Week of 2026-09-07
 
