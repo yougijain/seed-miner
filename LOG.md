@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-09-21
+
+- [ ] `2026-09-21_thrift-price-anomaly-donation-nlp` — Thrift Store Pricing Anomaly Detection via Donation Note Sentiment-Condition Mismatch
+      self: "The angle is genuine: standard NLP-on-logs would extract item categories or donor patterns; instead, we use NLP to *predict* an unobserved feature (condition assessment) and measure *pricing inconsistency* as a proxy for operational error, turning NLP into a forensic auditing tool rather than a classification task."
+
 ## Week of 2026-09-14
 
 - [ ] `2026-09-14_llb-slot-fairness-matching` — Little League Schedule Fairness via Bipartite Game-Slot Matching Under Endogenous Imbalance
