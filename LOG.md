@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-09-21_thrift-price-anomaly-donation-nlp` — Thrift Store Pricing Anomaly Detection via Donation Note Sentiment-Condition Mismatch
       self: "The angle is genuine: standard NLP-on-logs would extract item categories or donor patterns; instead, we use NLP to *predict* an unobserved feature (condition assessment) and measure *pricing inconsistency* as a proxy for operational error, turning NLP into a forensic auditing tool rather than a classification task."
+- [ ] `2026-09-22_trail-closure-cascade-graphs` — Trail Closure Cascade Graphs: Detecting Hidden Maintenance Dependencies via Network Bottleneck Collapse
+      self: "Has real legs: forces graph algorithms designed for static node/edge relationships to model temporal causality (closure triggering closure), which requires inverting the problem: graph the *absence pattern dynamics* rather than presence, making standard centrality and reachability fail until you reframe closure-sequences as causal paths."
 
 ## Week of 2026-09-14
 
