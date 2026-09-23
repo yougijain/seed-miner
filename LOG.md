@@ -12,6 +12,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "The angle is genuine: standard NLP-on-logs would extract item categories or donor patterns; instead, we use NLP to *predict* an unobserved feature (condition assessment) and measure *pricing inconsistency* as a proxy for operational error, turning NLP into a forensic auditing tool rather than a classification task."
 - [ ] `2026-09-22_trail-closure-cascade-graphs` — Trail Closure Cascade Graphs: Detecting Hidden Maintenance Dependencies via Network Bottleneck Collapse
       self: "Has real legs: forces graph algorithms designed for static node/edge relationships to model temporal causality (closure triggering closure), which requires inverting the problem: graph the *absence pattern dynamics* rather than presence, making standard centrality and reachability fail until you reframe closure-sequences as causal paths."
+- [ ] `2026-09-23_llb-fatigue-anomaly-detection` — Little League Schedule Anomalies via Team Fatigue State Space Clustering
+      self: "This has legs: the core insight is that standard anomaly detectors (Isolation Forest, LOF) fail on scheduling data because 'normal' depends on cumulative history (rest patterns), not point features. The fix—clustering on state-space trajectories instead of frames—is genuinely non-obvious and domain-specific to scheduling."
 
 ## Week of 2026-09-14
 
