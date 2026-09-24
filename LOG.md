@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "Has real legs: forces graph algorithms designed for static node/edge relationships to model temporal causality (closure triggering closure), which requires inverting the problem: graph the *absence pattern dynamics* rather than presence, making standard centrality and reachability fail until you reframe closure-sequences as causal paths."
 - [ ] `2026-09-23_llb-fatigue-anomaly-detection` — Little League Schedule Anomalies via Team Fatigue State Space Clustering
       self: "This has legs: the core insight is that standard anomaly detectors (Isolation Forest, LOF) fail on scheduling data because 'normal' depends on cumulative history (rest patterns), not point features. The fix—clustering on state-space trajectories instead of frames—is genuinely non-obvious and domain-specific to scheduling."
+- [ ] `2026-09-24_bee-inspection-scheduling-endogeneity` — Bee Inspection Interval Optimization Under Colony Feedback Loops
+      self: "Has genuine legs: the key insight is that beekeeper inspection schedules are NOT fixed by protocol but driven by observed symptoms, so the scheduler's constraint violations encode disease structure that raw health logs don't reveal. This forces optimization to reverse-engineer causality from scheduling behavior."
 
 ## Week of 2026-09-14
 
