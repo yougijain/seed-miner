@@ -1,27 +1,27 @@
 {
-  "generated_at": "2026-09-18",
+  "generated_at": "2026-09-25",
   "domains": {
-    "competitive_birdwatching": 0.317868124983168,
-    "community_theater_box_office": 0.15477191999194592,
-    "beekeeping_colony_health": 0.1601646995421175,
-    "disc_golf": 0.20234290261403948,
-    "thrift_store_pricing": 0.23812669565001254,
-    "amateur_radio_contest_logs": 0.13018591209439587,
-    "little_league_scheduling": 0.3196073197750144,
-    "community_garden_plots": 0.1545355875063014,
-    "local_trail_conditions": 0.3415036296098053,
-    "board_game_cafe_inventory": 0.17424480813367488,
-    "farmers_market_vendor_sales": 0.19315471550860389,
-    "youth_chess_tournament_pairings": 0.15899949838955946
+    "competitive_birdwatching": 0.3298846260806262,
+    "community_theater_box_office": 0.13097562702826224,
+    "beekeeping_colony_health": 0.17184446244770535,
+    "disc_golf": 0.16016159080048095,
+    "thrift_store_pricing": 0.18165816002675936,
+    "amateur_radio_contest_logs": 0.140583892921384,
+    "little_league_scheduling": 0.33156987547891564,
+    "community_garden_plots": 0.16600537755163544,
+    "local_trail_conditions": 0.2268930040446827,
+    "board_game_cafe_inventory": 0.14464195480846856,
+    "farmers_market_vendor_sales": 0.20578345187547417,
+    "youth_chess_tournament_pairings": 0.17063695590063874
   },
   "techniques": {
-    "anomaly_detection": 0.13227317466349356,
-    "forecasting": 0.14762263720299879,
-    "matching_recommendation": 0.2082143587718822,
-    "clustering_segmentation": 0.18639707630996544,
-    "graph_network_analysis": 0.1376372132601541,
-    "optimization_scheduling": 0.13406889695598442,
-    "nlp_on_logs": 0.19986996205803395,
-    "causal_inference_observational": 0.09825292696054429
+    "anomaly_detection": 0.14277350414799578,
+    "forecasting": 0.15881521449409244,
+    "matching_recommendation": 0.108227771977937,
+    "clustering_segmentation": 0.19887034034334658,
+    "graph_network_analysis": 0.11997991432801428,
+    "optimization_scheduling": 0.1181831508329816,
+    "nlp_on_logs": 0.21263350227940409,
+    "causal_inference_observational": 0.10683723636042972
   }
 }

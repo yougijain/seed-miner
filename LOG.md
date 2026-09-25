@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the core insight is that standard anomaly detectors (Isolation Forest, LOF) fail on scheduling data because 'normal' depends on cumulative history (rest patterns), not point features. The fix—clustering on state-space trajectories instead of frames—is genuinely non-obvious and domain-specific to scheduling."
 - [ ] `2026-09-24_bee-inspection-scheduling-endogeneity` — Bee Inspection Interval Optimization Under Colony Feedback Loops
       self: "Has genuine legs: the key insight is that beekeeper inspection schedules are NOT fixed by protocol but driven by observed symptoms, so the scheduler's constraint violations encode disease structure that raw health logs don't reveal. This forces optimization to reverse-engineer causality from scheduling behavior."
+- [ ] `2026-09-25_birdwatch-rarity-coabsence-anomaly` — Birdwatching Rarity Detection via Temporal Co-Absence Clustering
+      self: "This has legs: the core modification is genuine—standard anomaly detection assumes feature-space structure, but here the signal lives in *temporal co-absence patterns*, which inverts the normal presence→covariance logic and requires converting silence into a detectable anomaly signature."
 
 ## Week of 2026-09-14
 
