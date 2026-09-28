@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-09-28
+
+- [ ] `2026-09-28_little-league-slot-scarcity-matching` — Little League Scheduling via Reverse Bipartite Matching on Game Slot Scarcity Signals
+      self: "This forces matching to operate on endogenously-determined slot desirability (scarcity as revealed by current load) rather than exogenous team preferences, requiring the matcher to diagnose fairness through constraint-solver behavior rather than input metadata. The angle has teeth because real schedulers don't observe 'unfairness' directly—they see constraint violations."
+
 ## Week of 2026-09-21
 
 - [ ] `2026-09-21_thrift-price-anomaly-donation-nlp` — Thrift Store Pricing Anomaly Detection via Donation Note Sentiment-Condition Mismatch
