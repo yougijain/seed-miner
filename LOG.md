@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-09-28_little-league-slot-scarcity-matching` — Little League Scheduling via Reverse Bipartite Matching on Game Slot Scarcity Signals
       self: "This forces matching to operate on endogenously-determined slot desirability (scarcity as revealed by current load) rather than exogenous team preferences, requiring the matcher to diagnose fairness through constraint-solver behavior rather than input metadata. The angle has teeth because real schedulers don't observe 'unfairness' directly—they see constraint violations."
+- [ ] `2026-09-29_chess-pairing-sequence-clustering` — Youth Chess Pairing Clustering Collapse: Detecting Structural Unfairness via Opponent-Rating Sequence Segmentation
+      self: "This has legs: standard clustering operates on player feature vectors (rating, age, win %), but the genuine unfairness signal is *temporal path dependency*—a player paired against strong → weak → strong encodes different fairness implications than weak → strong → strong. Clustering on sequences forces the algorithm to detect when players inhabit fundamentally different 'difficulty curves,' which is invisible to cross-sectional clustering and cannot be diagnosed by post-hoc fairness audits of pairwise matchups."
 
 ## Week of 2026-09-21
 
