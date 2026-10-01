@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: standard clustering operates on player feature vectors (rating, age, win %), but the genuine unfairness signal is *temporal path dependency*—a player paired against strong → weak → strong encodes different fairness implications than weak → strong → strong. Clustering on sequences forces the algorithm to detect when players inhabit fundamentally different 'difficulty curves,' which is invisible to cross-sectional clustering and cannot be diagnosed by post-hoc fairness audits of pairwise matchups."
 - [ ] `2026-09-30_bee-colony-foraging-via-nlp-temporal-absence` — Colony Foraging Collapse Detection via Temporal Absence Clustering in Inspection Notes
       self: "The non-obvious bit is real: standard NLP on logs extracts *mentioned* problems; here we force it to work backward from *when problems stop being mentioned together* to infer that a cluster of symptoms (pollen stores, brood pattern, flight activity) all decayed simultaneously but weren't explicitly recorded as causal—revealing latent foraging-collapse mechanics that co-absence clustering exposes but sentiment/frequency NLP alone would miss."
+- [ ] `2026-10-01_trail-closure-flow-bottleneck` — Trail Closure Cascade Recovery via Flow-Network Bottleneck Detection
+      self: "Interesting because it flips graph-network analysis from co-occurrence (standard) to constraint-propagation: instead of asking 'which trails close together,' it asks 'if we model trail connectivity as flow capacity and closures as edge removals, where does the network's bottleneck shift?' This forces the technique to work backward from feasibility rather than correlation."
 
 ## Week of 2026-09-21
 
