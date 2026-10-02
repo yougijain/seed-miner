@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "The non-obvious bit is real: standard NLP on logs extracts *mentioned* problems; here we force it to work backward from *when problems stop being mentioned together* to infer that a cluster of symptoms (pollen stores, brood pattern, flight activity) all decayed simultaneously but weren't explicitly recorded as causal—revealing latent foraging-collapse mechanics that co-absence clustering exposes but sentiment/frequency NLP alone would miss."
 - [ ] `2026-10-01_trail-closure-flow-bottleneck` — Trail Closure Cascade Recovery via Flow-Network Bottleneck Detection
       self: "Interesting because it flips graph-network analysis from co-occurrence (standard) to constraint-propagation: instead of asking 'which trails close together,' it asks 'if we model trail connectivity as flow capacity and closures as edge removals, where does the network's bottleneck shift?' This forces the technique to work backward from feasibility rather than correlation."
+- [ ] `2026-10-02_disc-golf-routing-scheduling-endogeneity` — Disc Golf Round Scheduling Under Course-Routing Endogeneity
+      self: "This forces optimization_scheduling to confront a genuine domain-specific data shape: bin packing assumes independent bin capacities, but disc golf player groupings have an unmeasured confounder (which 9-hole routing did each player choose?). The interesting seam is that packing *failure patterns* (which skill-distance pairs refuse to pack together) can reveal whether routing bias exists—reversing the typical direction of the technique."
 
 ## Week of 2026-09-21
 
