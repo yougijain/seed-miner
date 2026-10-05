@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-10-05
+
+- [ ] `2026-10-05_qso-propagation-mode-arima-mismatch` — QSO Propagation Mode Inference via ARIMA Prediction Mismatch Clustering
+      self: "Legitimate: forecasting fails in a domain-specific way (operator mode-switching makes series non-stationary), and the signal—clusters of large forecast residuals—encodes the hidden modes. The technique *itself* (ARIMA) is unmodified, but its failure pattern becomes the diagnosis tool."
+
 ## Week of 2026-09-28
 
 - [ ] `2026-09-28_little-league-slot-scarcity-matching` — Little League Scheduling via Reverse Bipartite Matching on Game Slot Scarcity Signals
