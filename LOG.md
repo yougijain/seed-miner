@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-10-12_bee-colony-contact-inference-from-inspection-silence` — Colony Contact-Network Recovery from Silent Inspection Gaps
       self: "This has legs: standard network analysis assumes edges come from observed links (co-occurrence), but beekeeping data is sparse—colonies are inspected irregularly and notes are incomplete. The key insight is that when two colonies are *both absent from notes* during overlapping time windows, that silence itself signals coupling (shared disease pressure suppresses symptom reporting, or shared forage exhaustion delays inspection). The technique must invert normal network construction: build edges from *temporal co-absence* rather than co-presence, then apply centrality metrics to detect which colonies would be critical to contain if one fails. This forces a real modification to graph algorithms because the data shape (sparse, episodic notes with gaps) is fundamentally different from typical contact networks."
+- [ ] `2026-10-13_birdwatcher-skill-segmentation-collapse` — Birdwatcher Skill Inference via Sighting-List Segmentation Collapse
+      self: "This has legs because it forces clustering to work on derived time-series geometry (discovery curve shape) rather than static features, and the failure mode (segmentation collapse for experienced birders) is actually meaningful for tournament handicapping—but the synthetic data must exhibit real power-law discovery patterns to avoid being toy noise."
 
 ## Week of 2026-10-05
 
