@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs because it forces clustering to work on derived time-series geometry (discovery curve shape) rather than static features, and the failure mode (segmentation collapse for experienced birders) is actually meaningful for tournament handicapping—but the synthetic data must exhibit real power-law discovery patterns to avoid being toy noise."
 - [ ] `2026-10-14_farmers-market-vendor-scheduling-volatility-packing` — Vendor Demand Volatility as Bin-Packing Metric: Detecting Hidden Stall-Rotation Dependencies
       self: "This has real teeth: standard bin-packing assumes fixed weights (vendor stall space needs), but farmers market vendors have *volatile*, *correlated* demand that endogenously changes based on seasonal, weather, and customer-overlap factors. The key insight is that when you try to pack vendors into fixed stall assignments and their demand patterns cause repeated re-packing instability, that instability *encodes* hidden dependencies. You can invert the constraint violations to infer which vendor pairs should NOT be assigned far apart or should rotate together."
+- [ ] `2026-10-15_garden-yield-forecast-planting-endogeneity` — Plot Yield Forecasting Under Temporal Planting Endogeneity
+      self: "This has real methodological teeth: forecasting assumptions (stationarity, exogenous regressors) are genuinely violated when human behavior adapts to previous outcomes. The seam—detecting endogeneity through forecast residual clustering—is what makes it non-obvious."
 
 ## Week of 2026-10-05
 
