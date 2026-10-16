@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has real teeth: standard bin-packing assumes fixed weights (vendor stall space needs), but farmers market vendors have *volatile*, *correlated* demand that endogenously changes based on seasonal, weather, and customer-overlap factors. The key insight is that when you try to pack vendors into fixed stall assignments and their demand patterns cause repeated re-packing instability, that instability *encodes* hidden dependencies. You can invert the constraint violations to infer which vendor pairs should NOT be assigned far apart or should rotate together."
 - [ ] `2026-10-15_garden-yield-forecast-planting-endogeneity` — Plot Yield Forecasting Under Temporal Planting Endogeneity
       self: "This has real methodological teeth: forecasting assumptions (stationarity, exogenous regressors) are genuinely violated when human behavior adapts to previous outcomes. The seam—detecting endogeneity through forecast residual clustering—is what makes it non-obvious."
+- [ ] `2026-10-16_community-theater-cancellation-backdoor-adjustment` — Show Attendance Confounder Recovery via Ticket Cancellation Timing
+      self: "The modification is real: standard causal_inference_observational assumes treatments and confounders live in flat feature tables, but here the *timing sequence* of cancellations IS the confounder—it's not a covariate, it's a causal pathway that must be reconstructed from sparse transaction logs before adjustment can even begin. The domain forces you to infer latent show quality (the confounder) from cancellation clustering behavior rather than observing it directly."
 
 ## Week of 2026-10-05
 
