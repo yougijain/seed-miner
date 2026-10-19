@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-10-19
+
+- [ ] `2026-10-19_cafe-game-contention-binpack` — Game Checkout Contention Detection via Bin-Packing Feasibility Collapse
+      self: "Has legs: bin-packing is built to maximize utilization on explicit constraints; applying it as a *diagnostic tool* (watching when it fails) rather than an *optimization tool* forces the technique to infer latent demand structure from infeasibility cascades, which is genuinely different from standard scheduling."
+
 ## Week of 2026-10-12
 
 - [ ] `2026-10-12_bee-colony-contact-inference-from-inspection-silence` — Colony Contact-Network Recovery from Silent Inspection Gaps
