@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-10-19_cafe-game-contention-binpack` — Game Checkout Contention Detection via Bin-Packing Feasibility Collapse
       self: "Has legs: bin-packing is built to maximize utilization on explicit constraints; applying it as a *diagnostic tool* (watching when it fails) rather than an *optimization tool* forces the technique to infer latent demand structure from infeasibility cascades, which is genuinely different from standard scheduling."
+- [ ] `2026-10-20_qso-mode-switching-clustering` — QSO Mode Switching Detection via Temporal Segmentation Collapse
+      self: "This has legs: the core insight is that *when* clustering fails on time-series contact intervals reveals operator strategy shifts that propagation models alone cannot capture; it reverses the normal flow (segment first, interpret second) and the seams—where standard temporal clustering breaks—are diagnostic."
 
 ## Week of 2026-10-12
 
