@@ -12,6 +12,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "Has legs: bin-packing is built to maximize utilization on explicit constraints; applying it as a *diagnostic tool* (watching when it fails) rather than an *optimization tool* forces the technique to infer latent demand structure from infeasibility cascades, which is genuinely different from standard scheduling."
 - [ ] `2026-10-20_qso-mode-switching-clustering` — QSO Mode Switching Detection via Temporal Segmentation Collapse
       self: "This has legs: the core insight is that *when* clustering fails on time-series contact intervals reveals operator strategy shifts that propagation models alone cannot capture; it reverses the normal flow (segment first, interpret second) and the seams—where standard temporal clustering breaks—are diagnostic."
+- [ ] `2026-10-21_farmers-market-vendor-coabsence-network` — Vendor Substitutability via Customer Co-Absence Graphs
+      self: "Has legs: the core inversion (co-absence graph from transaction bundles) forces a genuine modification to standard co-occurrence networks—customers reveal substitutability through *visit sequences*, not vendor features, and the clustering breaks when you remove vendors, requiring the network to diagnose structural role rather than attribute similarity."
 
 ## Week of 2026-10-12
 
