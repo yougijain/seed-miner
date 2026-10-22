@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the core insight is that *when* clustering fails on time-series contact intervals reveals operator strategy shifts that propagation models alone cannot capture; it reverses the normal flow (segment first, interpret second) and the seams—where standard temporal clustering breaks—are diagnostic."
 - [ ] `2026-10-21_farmers-market-vendor-coabsence-network` — Vendor Substitutability via Customer Co-Absence Graphs
       self: "Has legs: the core inversion (co-absence graph from transaction bundles) forces a genuine modification to standard co-occurrence networks—customers reveal substitutability through *visit sequences*, not vendor features, and the clustering breaks when you remove vendors, requiring the network to diagnose structural role rather than attribute similarity."
+- [ ] `2026-10-22_colony-foraging-silence-matching` — Colony Foraging Bottleneck Detection via Temporal Inspection-Note Co-Silence Matching
+      self: "This has legs: standard matching_recommendation assumes observed interactions/preferences, but beekeeping inspection notes are sparse and negative-absence is as meaningful as positive presence. The technique mismatch (matching on co-silence, not co-mention) forces a genuine inversion of how matching cost is computed."
 
 ## Week of 2026-10-12
 
