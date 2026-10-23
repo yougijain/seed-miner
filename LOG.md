@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "Has legs: the core inversion (co-absence graph from transaction bundles) forces a genuine modification to standard co-occurrence networks—customers reveal substitutability through *visit sequences*, not vendor features, and the clustering breaks when you remove vendors, requiring the network to diagnose structural role rather than attribute similarity."
 - [ ] `2026-10-22_colony-foraging-silence-matching` — Colony Foraging Bottleneck Detection via Temporal Inspection-Note Co-Silence Matching
       self: "This has legs: standard matching_recommendation assumes observed interactions/preferences, but beekeeping inspection notes are sparse and negative-absence is as meaningful as positive presence. The technique mismatch (matching on co-silence, not co-mention) forces a genuine inversion of how matching cost is computed."
+- [ ] `2026-10-23_thrift-pricing-forecast-donation-endogeneity` — Thrift Store Pricing Forecast Collapse Under Donation Velocity Endogeneity
+      self: "This has real legs: standard time-series forecasting assumes stationarity, but thrift pricing endogenously responds to donation inflows in ways that break that assumption. The interesting bit is using forecast *failure patterns* (widening intervals, regime switches) as a diagnostic for when pricing logic itself changed, not just demand."
 
 ## Week of 2026-10-12
 
