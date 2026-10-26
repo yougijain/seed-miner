@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-10-26
+
+- [ ] `2026-10-26_theater-revenue-per-seat-variance-collapse` — Community Theater Box Office Anomaly Detection via Revenue-per-Seat Variance Collapse
+      self: "This has real legs: variance collapse is a legitimate signal that community theater operators ignore, and the technique (detecting anomalies in *moments* rather than means) is genuinely different from tutorial-grade box-office anomaly detection. The seam is that anomaly detectors are built for outlier *values*, not outlier *stability*."
+
 ## Week of 2026-10-19
 
 - [ ] `2026-10-19_cafe-game-contention-binpack` — Game Checkout Contention Detection via Bin-Packing Feasibility Collapse
