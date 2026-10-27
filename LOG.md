@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-10-26_theater-revenue-per-seat-variance-collapse` — Community Theater Box Office Anomaly Detection via Revenue-per-Seat Variance Collapse
       self: "This has real legs: variance collapse is a legitimate signal that community theater operators ignore, and the technique (detecting anomalies in *moments* rather than means) is genuinely different from tutorial-grade box-office anomaly detection. The seam is that anomaly detectors are built for outlier *values*, not outlier *stability*."
+- [ ] `2026-10-27_theater-intermission-anomaly-timing` — Community Theater Intermission Pacing Anomalies via Temporal Interval Distribution
+      self: "This has real legs: standard anomaly detection (Isolation Forest, LOF) is built to find rare/isolated points, but theater intermission data forces it to work backward—anomalies are *regular* concession purchase intervals collapsing into clumps or spreading into gaps, requiring the model to reframe uniformity as the pathological signal."
 
 ## Week of 2026-10-19
 
