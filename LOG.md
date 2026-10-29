@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has real legs: standard anomaly detection (Isolation Forest, LOF) is built to find rare/isolated points, but theater intermission data forces it to work backward—anomalies are *regular* concession purchase intervals collapsing into clumps or spreading into gaps, requiring the model to reframe uniformity as the pathological signal."
 - [ ] `2026-10-28_qso-interval-stationarity-forecasting-mode-inference` — QSO Interval Stationarity Collapse as Propagation Mode Detector
       self: "This has real legs: forecasting techniques assume stationarity, but radio propagation creates regime switches that invalidate that assumption. The insight is using *forecast failure patterns themselves* as a signal of unobserved mode/behavior changes, rather than forecasting the mode directly. The seam—where ARIMA breaks—is the data story."
+- [ ] `2026-10-29_farmers-market-stall-conflict-bin-packing` — Vendor Stall-Conflict Detection via Bin-Packing Infeasibility Cascades
+      self: "This has legs: standard bin-packing treats all items as independent, but farmers-market vendors have real undeclared co-constraints (shared power draw, water access, customer foot-traffic cannibalization) that manifest as packing brittleness. The seam is forcing the optimizer to infer affinity by detecting *where it fails* rather than where it succeeds—a genuine inversion of the technique's normal use."
 
 ## Week of 2026-10-19
 
