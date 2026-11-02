@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-11-02
+
+- [ ] `2026-11-02_farmers-market-basket-graph-temporal-edge-collapse` — Vendor Cross-Purchase Inference via Temporal Edge Collapse in Customer Basket Graphs
+      self: "This has genuine seams: standard vendor affinity uses co-purchase frequency; instead it inverts to detect when co-purchase edges *vanish* in windows where we'd expect them, using Jaccard-similarity temporal breakpoints in bipartite neighborhoods to infer that vendor substitutability or supply constraints are active. The technique must work backward from missing edges to infer unobserved vendor state."
+
 ## Week of 2026-10-26
 
 - [ ] `2026-10-26_theater-revenue-per-seat-variance-collapse` — Community Theater Box Office Anomaly Detection via Revenue-per-Seat Variance Collapse
