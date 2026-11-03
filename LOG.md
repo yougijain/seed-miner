@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-11-02_farmers-market-basket-graph-temporal-edge-collapse` — Vendor Cross-Purchase Inference via Temporal Edge Collapse in Customer Basket Graphs
       self: "This has genuine seams: standard vendor affinity uses co-purchase frequency; instead it inverts to detect when co-purchase edges *vanish* in windows where we'd expect them, using Jaccard-similarity temporal breakpoints in bipartite neighborhoods to infer that vendor substitutability or supply constraints are active. The technique must work backward from missing edges to infer unobserved vendor state."
+- [ ] `2026-11-03_bee-colony-disease-matching-silence` — Colony Disease Propagation Inference via Bipartite Genetic Matching on Silent Inspection Gaps
+      self: "This forces bipartite matching to invert its typical input: instead of matching preferred pairs, it matches colonies based on *when they jointly stop reporting* specific symptoms, requiring the algorithm to work backward from temporal silence into disease-network topology. The seam is real: standard matching assumes positive signal; this must infer structure from absence co-correlation."
 
 ## Week of 2026-10-26
 
