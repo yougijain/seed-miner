@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This forces bipartite matching to invert its typical input: instead of matching preferred pairs, it matches colonies based on *when they jointly stop reporting* specific symptoms, requiring the algorithm to work backward from temporal silence into disease-network topology. The seam is real: standard matching assumes positive signal; this must infer structure from absence co-correlation."
 - [ ] `2026-11-04_boardgame-contention-anomaly` — Game Checkout Contention Detection via Temporal Feasibility Collapse
       self: "Has real teeth: the key insight is that anomaly detection on *packing feasibility itself* (not game popularity) reveals games that cause cascading unavailability. The technique must work backward from scheduling failure to identify problematic game combinations."
+- [ ] `2026-11-05_llb-rest-day-fairness-anomaly` — Little League Scheduling Fairness via Rest-Day Desynchronization Anomaly Detection
+      self: "Has legs: the inversion from detecting rare events to detecting suspicious *synchronization* of rest-day sequences across teams actually forces anomaly detection into an unfamiliar mode where high correlation becomes the anomaly, not isolation. The problem is real (fairness violations are hard to spot in schedules) and the technique *genuinely* doesn't fit the data shape without modification."
 
 ## Week of 2026-10-26
 
