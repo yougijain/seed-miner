@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "Has real teeth: the key insight is that anomaly detection on *packing feasibility itself* (not game popularity) reveals games that cause cascading unavailability. The technique must work backward from scheduling failure to identify problematic game combinations."
 - [ ] `2026-11-05_llb-rest-day-fairness-anomaly` — Little League Scheduling Fairness via Rest-Day Desynchronization Anomaly Detection
       self: "Has legs: the inversion from detecting rare events to detecting suspicious *synchronization* of rest-day sequences across teams actually forces anomaly detection into an unfamiliar mode where high correlation becomes the anomaly, not isolation. The problem is real (fairness violations are hard to spot in schedules) and the technique *genuinely* doesn't fit the data shape without modification."
+- [ ] `2026-11-06_disc-golf-routing-layout-graph-clustering` — Disc Golf Course Routing as Hidden Graph: Inferring Player Skill Clustering from Score Variance Collapse Across Layout Permutations
+      self: "This has real legs: the core insight is that standard player-clustering on raw scores is confounded by course routing endogeneity, so we must invert the graph—build it on *which players' score-variance responds similarly to layout changes*—which forces a modification to standard node-similarity metrics to capture 'insensitivity to graph topology changes' rather than absolute score proximity."
 
 ## Week of 2026-10-26
 
