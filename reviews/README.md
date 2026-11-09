@@ -6,6 +6,7 @@ One file per week summarising the seeds generated in that week.
 
 | Week | Generated | Promoted | Rejected | Unreviewed |
 |------|-----------|----------|----------|------------|
+| [Week of 2026-11-09](week-of-2026-11-09.md) | 1 | 0 | 0 | 1 |
 | [Week of 2026-11-02](week-of-2026-11-02.md) | 5 | 0 | 0 | 5 |
 | [Week of 2026-10-26](week-of-2026-10-26.md) | 5 | 0 | 0 | 5 |
 | [Week of 2026-10-19](week-of-2026-10-19.md) | 5 | 0 | 0 | 5 |

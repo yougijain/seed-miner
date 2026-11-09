@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-11-09
+
+- [ ] `2026-11-09_theater-box-office-occupancy-anomaly` — Community Theater Revenue Anomaly Detection via Seat-Occupancy Pattern Inversion
+      self: "Has legs: anomaly detection typically flags rare events or extreme values, but this forces it to work backward from spatial distribution structure (seat clustering) where the anomaly is *not* absence of tickets but presence of correlated occupancy patterns that shouldn't occur under healthy demand."
+
 ## Week of 2026-11-02
 
 - [ ] `2026-11-02_farmers-market-basket-graph-temporal-edge-collapse` — Vendor Cross-Purchase Inference via Temporal Edge Collapse in Customer Basket Graphs
