@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-11-09_theater-box-office-occupancy-anomaly` — Community Theater Revenue Anomaly Detection via Seat-Occupancy Pattern Inversion
       self: "Has legs: anomaly detection typically flags rare events or extreme values, but this forces it to work backward from spatial distribution structure (seat clustering) where the anomaly is *not* absence of tickets but presence of correlated occupancy patterns that shouldn't occur under healthy demand."
+- [ ] `2026-11-10_thrift-pricing-donation-endogeneity` — Thrift Store Pricing Regime Detection via Donation Velocity Endogeneity
+      self: "This has legs: the core insight is that anomaly detection assumes independent anomalies, but thrift pricing is driven by unobserved inventory rules that flip *in response to donation volume*, making anomalies appear clustered/non-stationary in ways that force the detector to work backward from detection failure to infer regime switches."
 
 ## Week of 2026-11-02
 
