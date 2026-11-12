@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the core insight is that anomaly detection assumes independent anomalies, but thrift pricing is driven by unobserved inventory rules that flip *in response to donation volume*, making anomalies appear clustered/non-stationary in ways that force the detector to work backward from detection failure to infer regime switches."
 - [ ] `2026-11-11_thrift-pricing-clustering-donation-composition` — Thrift Store Price Clustering Under Donation Composition Shift
       self: "This has legs: the non-obvious angle is that clustering stability itself becomes a diagnostic—if the same item *types* cluster differently after a donation-source shift, that signals unobserved pricing-rule drift, and standard clustering can't distinguish real price regime change from composition-induced artifact without temporal structure."
+- [ ] `2026-11-12_beekeeping-silence-matching-nlp` — Colony Health Inference from Inspection Note Temporal Silence Patterns via NLP
+      self: "This has genuine seams: standard NLP entity extraction assumes presence/frequency signals disease; the modification requires building a temporal absence graph where silence *itself* becomes the signal, forcing a dual-extraction (entity + absence timestamp) that inverts normal NLP workflow."
 
 ## Week of 2026-11-02
 
