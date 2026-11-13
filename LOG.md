@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the non-obvious angle is that clustering stability itself becomes a diagnostic—if the same item *types* cluster differently after a donation-source shift, that signals unobserved pricing-rule drift, and standard clustering can't distinguish real price regime change from composition-induced artifact without temporal structure."
 - [ ] `2026-11-12_beekeeping-silence-matching-nlp` — Colony Health Inference from Inspection Note Temporal Silence Patterns via NLP
       self: "This has genuine seams: standard NLP entity extraction assumes presence/frequency signals disease; the modification requires building a temporal absence graph where silence *itself* becomes the signal, forcing a dual-extraction (entity + absence timestamp) that inverts normal NLP workflow."
+- [ ] `2026-11-13_trail-closure-crew-assignment-inference` — Trail Closure Temporal Clustering as Unobserved Maintenance Crew Assignment Recovery
+      self: "Genuine modification: standard causal inference asks 'does treatment cause outcome'; this inverts it to 'does observed outcome co-occurrence reveal latent treatment assignment (crew)?' forcing backdoor adjustment to work backward from temporal clustering of closures to infer the confounding variable (crew identity) rather than isolating a treatment effect."
 
 ## Week of 2026-11-02
 
