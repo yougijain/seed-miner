@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-11-16
+
+- [ ] `2026-11-16_cafe-game-demand-clustering-checkout-endogeneity` — Board Game Rotation Demand Clustering Under Checkout-Window Endogeneity
+      self: "This has legs: the technique must disentangle whether games cluster by *true inherent demand* or by *how long they occupy a table*, which forces a methodological rethinking of what 'distance' means in a cafe-inventory context where two high-demand games may be inseparable in feature space if one is 180-min and one is 15-min."
+
 ## Week of 2026-11-09
 
 - [ ] `2026-11-09_theater-box-office-occupancy-anomaly` — Community Theater Revenue Anomaly Detection via Seat-Occupancy Pattern Inversion
