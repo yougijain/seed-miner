@@ -12,6 +12,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the technique must disentangle whether games cluster by *true inherent demand* or by *how long they occupy a table*, which forces a methodological rethinking of what 'distance' means in a cafe-inventory context where two high-demand games may be inseparable in feature space if one is 180-min and one is 15-min."
 - [ ] `2026-11-17_disc-golf-routing-anomaly-detection` — Disc Golf Score Anomaly Detection via Hole-Sequence Routing Collapse
       self: "This has real legs: the core insight is that standard point-anomaly detection (isolation forest on raw scores) fails because players *strategically choose routing* in response to hidden fatigue/skill loss, making the anomaly endogenous to the detection target. The fix—detecting anomalies in routing-score *pairs* rather than scores alone—forces a genuine re-architecting of how anomaly detection works in confounded domains."
+- [ ] `2026-11-18_garden-plot-scheduling-endogeneity-detection` — Garden Plot Yield Scheduling: Detecting Endogenous Planting Shifts via Optimization Feasibility Collapse
+      self: "This has legs: the technique inverts standard bin-packing (normally: pack plots given fixed gardener preferences) to become an inference engine (find which gardeners have hidden behavioral adaptation) by treating scheduling infeasibility cascades as signals of endogenous timing shifts, not just resource constraints."
 
 ## Week of 2026-11-09
 
