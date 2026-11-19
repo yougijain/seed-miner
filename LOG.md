@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has real legs: the core insight is that standard point-anomaly detection (isolation forest on raw scores) fails because players *strategically choose routing* in response to hidden fatigue/skill loss, making the anomaly endogenous to the detection target. The fix—detecting anomalies in routing-score *pairs* rather than scores alone—forces a genuine re-architecting of how anomaly detection works in confounded domains."
 - [ ] `2026-11-18_garden-plot-scheduling-endogeneity-detection` — Garden Plot Yield Scheduling: Detecting Endogenous Planting Shifts via Optimization Feasibility Collapse
       self: "This has legs: the technique inverts standard bin-packing (normally: pack plots given fixed gardener preferences) to become an inference engine (find which gardeners have hidden behavioral adaptation) by treating scheduling infeasibility cascades as signals of endogenous timing shifts, not just resource constraints."
+- [ ] `2026-11-19_birdwatcher-skill-clustering-rarity-curves` — Birdwatcher Skill Clustering via Rarity-Discovery Curve Shape Collapse
+      self: "This has legs: the core insight is that standard K-means assumes feature distributions are roughly comparable in scale/shape, but birdwatcher sighting trajectories have fundamentally different *statistical shapes* (power-law tail vs. linear ramp) that feature engineering must recover before clustering can work. The seam is real: you can't just cluster on cumulative counts—you must extract curve-fitting residuals or quantile-based shape features, which is a genuine modification to how clustering is typically applied to time-series data."
 
 ## Week of 2026-11-09
 
