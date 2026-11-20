@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has legs: the technique inverts standard bin-packing (normally: pack plots given fixed gardener preferences) to become an inference engine (find which gardeners have hidden behavioral adaptation) by treating scheduling infeasibility cascades as signals of endogenous timing shifts, not just resource constraints."
 - [ ] `2026-11-19_birdwatcher-skill-clustering-rarity-curves` — Birdwatcher Skill Clustering via Rarity-Discovery Curve Shape Collapse
       self: "This has legs: the core insight is that standard K-means assumes feature distributions are roughly comparable in scale/shape, but birdwatcher sighting trajectories have fundamentally different *statistical shapes* (power-law tail vs. linear ramp) that feature engineering must recover before clustering can work. The seam is real: you can't just cluster on cumulative counts—you must extract curve-fitting residuals or quantile-based shape features, which is a genuine modification to how clustering is typically applied to time-series data."
+- [ ] `2026-11-20_vendor-footprint-anomaly-stall-rotation` — Vendor Temporal Footprint Clustering Under Stall-Rotation Endogeneity
+      self: "This has real legs: the core insight is that anomaly detection must be run on temporal *absence patterns* across stall pairings rather than on vendor sales/visits directly, forcing a reversal where the anomaly is a co-presence that shouldn't happen, not a solo event. The endogeneity (stall rotation algorithm tries to pack all vendors weekly) creates a genuine confound that makes naive anomaly detection on visit volumes useless."
 
 ## Week of 2026-11-09
 
