@@ -10,6 +10,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
 
 - [ ] `2026-11-24_garden-plot-harvest-window-clustering` — Garden Plot Spatial Clustering Under Concurrent Harvest-Window Constraints
       self: "This has legs: the core insight is that plot features (soil pH, sun exposure, water access) don't change, but their *effective similarity* inverts when harvest logistics (shared compost bins, group watering schedules, harvest-day staggering) force temporal coupling. Standard clustering sees stable physical attributes; the modification must track how dynamic scheduling constraints reshape feature-space proximity—forcing the algorithm to either re-cluster continuously or expose its failure to handle endogenous confounding."
+- [ ] `2026-11-24_thrift-pricing-bipartite-betweenness` — Thrift Store Pricing as Donor-Type Bipartite Flow: Detecting Hidden Inventory Rules via Network Betweenness Collapse
+      self: "Genuine: graph centrality metrics assume stable network topology, but thrift pricing networks are endogenously destabilized by upstream donor-mix shocks. Betweenness collapse *as a signal* of hidden inventory rules (not just a symptom) is the angle—reversing the technique's normal use from hub-finding to regime-change detection."
 
 ## Week of 2026-11-16
 
