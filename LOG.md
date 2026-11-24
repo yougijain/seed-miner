@@ -6,6 +6,11 @@
 Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed. Promote with `python runner/review.py promote <id>`.
 
 
+## Week of 2026-11-23
+
+- [ ] `2026-11-24_garden-plot-harvest-window-clustering` — Garden Plot Spatial Clustering Under Concurrent Harvest-Window Constraints
+      self: "This has legs: the core insight is that plot features (soil pH, sun exposure, water access) don't change, but their *effective similarity* inverts when harvest logistics (shared compost bins, group watering schedules, harvest-day staggering) force temporal coupling. Standard clustering sees stable physical attributes; the modification must track how dynamic scheduling constraints reshape feature-space proximity—forcing the algorithm to either re-cluster continuously or expose its failure to handle endogenous confounding."
+
 ## Week of 2026-11-16
 
 - [ ] `2026-11-16_cafe-game-demand-clustering-checkout-endogeneity` — Board Game Rotation Demand Clustering Under Checkout-Window Endogeneity
