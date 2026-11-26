@@ -14,6 +14,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "Genuine: graph centrality metrics assume stable network topology, but thrift pricing networks are endogenously destabilized by upstream donor-mix shocks. Betweenness collapse *as a signal* of hidden inventory rules (not just a symptom) is the angle—reversing the technique's normal use from hub-finding to regime-change detection."
 - [ ] `2026-11-25_chess-pairing-stratification-collapse` — Youth Chess Tournament Pairing Feasibility Collapse Under Skill-Stratification Constraints
       self: "This has real legs: the core insight is that adding a seemingly-reasonable fairness constraint (opponents within K ELO points per round) to standard round-robin scheduling exposes hidden clustering in the player population—the optimizer doesn't just fail gracefully, it fails in *diagnostic* ways that reveal tournament composition problems. That inversion from 'solve the scheduling problem' to 'use scheduling failure as a probe' is the genuine modification."
+- [ ] `2026-11-26_chess-pairing-skill-volatility-clustering` — Youth Chess Pairing Clustering Under Skill-Volatility Endogeneity
+      self: "This has legs: the core anomaly is real—when player performance (and thus rating volatility) endogenously shifts, the opponent-sequence feature vector changes mid-tournament, causing cluster membership to flip for the same player across rounds. This forces the analyst to ask whether K-means' stability assumption holds in a domain where players' feature vectors are non-stationary by design. The seam is sharp: clustering pairing data assumes stable player identities, but tournament dynamics violate that."
 
 ## Week of 2026-11-16
 
