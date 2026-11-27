@@ -16,6 +16,8 @@ Checking a box = promoted. `[x]` promoted · `[~]` rejected · `[ ]` unreviewed.
       self: "This has real legs: the core insight is that adding a seemingly-reasonable fairness constraint (opponents within K ELO points per round) to standard round-robin scheduling exposes hidden clustering in the player population—the optimizer doesn't just fail gracefully, it fails in *diagnostic* ways that reveal tournament composition problems. That inversion from 'solve the scheduling problem' to 'use scheduling failure as a probe' is the genuine modification."
 - [ ] `2026-11-26_chess-pairing-skill-volatility-clustering` — Youth Chess Pairing Clustering Under Skill-Volatility Endogeneity
       self: "This has legs: the core anomaly is real—when player performance (and thus rating volatility) endogenously shifts, the opponent-sequence feature vector changes mid-tournament, causing cluster membership to flip for the same player across rounds. This forces the analyst to ask whether K-means' stability assumption holds in a domain where players' feature vectors are non-stationary by design. The seam is sharp: clustering pairing data assumes stable player identities, but tournament dynamics violate that."
+- [ ] `2026-11-27_colony-silence-disease-inference` — Colony Health Inference from Inspection Note Temporal Silence Patterns via NLP
+      self: "This has real legs: it inverts NLP from 'what was written' to 'what stopped being written', exploiting temporal co-silence as a signal of shared epidemiological risk. The technique modification is genuine—standard NLP extraction fails on this problem; you must build a temporal absence detector that treats synchronized metric disappearance as the signal, not the noise."
 
 ## Week of 2026-11-16
 
